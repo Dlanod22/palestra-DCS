@@ -25,13 +25,15 @@ public class CorsoDao implements IDAO<Corso>{
 
     private final String insertCorso = "insert into corsi(nome) values(?)";
 
-    private final String readAllClassi = "select * from corsi";
+    private final String readAllCorsi = "select * from corsi";
 
     private final String updateCorso = "update corsi set nome=? where id=?";
 
     private final String deleteCorso = "delete from corsi where id=?";
 
     private final String readCorsiByIdIstruttore = "select c.* from corsi c  where c.id_istruttore = ?";
+
+    private final String readCorsiByIdPianoAbbonamento = "select c.* FROM corsi c JOIN piano_corsi pc ON c.id = pc.corso_id WHERE pc.piano_id = ?";
 
     @Override
     public Long create(Corso e) 
@@ -44,9 +46,10 @@ public class CorsoDao implements IDAO<Corso>{
     public Map<Long, Entity> readAll() 
     {
         Map<Long, Entity> ris = new LinkedHashMap<>();
-        Map<Long, Map<String, String>> result = database.executeQuery(readAllClassi);
+        Map<Long, Map<String, String>> result = database.executeQuery(readAllCorsi);
 
-        for(Entry<Long, Map<String, String>> coppia : result.entrySet()){
+        for(Entry<Long, Map<String, String>> coppia : result.entrySet())
+        {
             Corso c = context.getBean(Corso.class, coppia.getValue());
             ris.put(c.getId(), c);
         }
@@ -79,7 +82,21 @@ public class CorsoDao implements IDAO<Corso>{
         Map<Long, Entity> ris = new LinkedHashMap<>();
         Map<Long, Map<String, String>> result = database.executeQuery(readCorsiByIdIstruttore, String.valueOf(idIstruttore));
 
-        for(Entry<Long, Map<String, String>> coppia : result.entrySet()){
+        for(Entry<Long, Map<String, String>> coppia : result.entrySet())
+        {
+            Corso c = context.getBean(Corso.class, coppia.getValue());
+            ris.put(c.getId(), c);
+        }
+        return ris;
+    }
+
+    public Map<Long, Entity> readByIdPianoAbbonamento(Long idPiano)
+    {
+        Map<Long, Entity> ris = new LinkedHashMap<>();
+        Map<Long, Map<String, String>> result = database.executeQuery(readCorsiByIdPianoAbbonamento, String.valueOf(idPiano));
+
+        for(Entry<Long, Map<String, String>> coppia : result.entrySet())
+        {
             Corso c = context.getBean(Corso.class, coppia.getValue());
             ris.put(c.getId(), c);
         }

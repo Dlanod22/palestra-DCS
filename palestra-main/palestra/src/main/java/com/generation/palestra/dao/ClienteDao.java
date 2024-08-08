@@ -89,6 +89,8 @@ public class ClienteDao implements IDAO<Cliente>{
     
         return ris;
     }
+
+    
     public Map<Long, Entity> readByIdPiano(Long id_piano) 
     {
         Map<Long, Entity> ris = new LinkedHashMap<>();
