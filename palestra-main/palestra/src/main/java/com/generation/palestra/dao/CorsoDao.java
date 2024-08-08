@@ -23,7 +23,7 @@ public class CorsoDao implements IDAO<Corso>{
     private ApplicationContext context;
 
 
-    private final String insertCorso = "insert into corsi(nome) values(?)";
+    private final String insertCorso = "insert into corsi(id,nome,id_istruttore) values(?,?,?)";
 
     private final String readAllClassi = "select * from corsi";
 
@@ -36,7 +36,7 @@ public class CorsoDao implements IDAO<Corso>{
     @Override
     public Long create(Corso e) 
     {
-        Long idCorso = database.executeUpdate(insertCorso, e.getNome());
+        Long idCorso = database.executeUpdate(insertCorso, String.valueOf(e.getId()), e.getNome(), String.valueOf(e.getIdIstruttore()));
         return idCorso;
     }
 
