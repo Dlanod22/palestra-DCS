@@ -78,7 +78,7 @@ public class ClienteDao implements IDAO<Cliente>{
             Cliente c = context.getBean(Cliente.class, coppia.getValue());
             String idPianoStr = coppia.getValue().get("idpiano");
 
-            if(idPianoStr == null)
+            if(idPianoStr != null)
             {
                 PianoAbbonamento p = pianoAbbonamentoDao.readById(Long.parseLong(idPianoStr));
                 c.setPianoAbbonamento(p);
