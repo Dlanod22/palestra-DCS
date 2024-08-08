@@ -1,4 +1,4 @@
-package com.generation.palestra.tests;
+package com.generation.palestra;
 
 import java.sql.Date;
 
@@ -9,9 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 import com.generation.palestra.dao.ClienteDao;
 import com.generation.palestra.entities.Cliente;
+import com.generation.palestra.tests.ClienteTest;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.generation.palestra")
 public class PalestraApplication {
 
     public static void main(String[] args) 
