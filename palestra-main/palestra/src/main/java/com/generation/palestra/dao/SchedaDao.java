@@ -51,7 +51,7 @@ public class SchedaDao implements IDAO<Scheda>
         return idScheda;
     }
 
-    @Override
+    /*@Override
     public Map<Long, Entity> readAll() 
     {
         Map<Long, Entity> ris = new LinkedHashMap<>();
@@ -63,7 +63,25 @@ public class SchedaDao implements IDAO<Scheda>
             ris.put(s.getId(), s);
         }
         return ris;
-    }
+    }*/
+
+    @Override
+    public Map<Long, Entity> readAll() 
+    {
+        Map<Long, Entity> ris = new LinkedHashMap<>();
+        Map<Long, Map<String, String>> result = database.executeQuery(readAllSchede);
+
+        if (result != null) 
+            {
+                for(Entry<Long, Map<String, String>> coppia : result.entrySet())
+                {
+                    Scheda s = context.getBean(Scheda.class, coppia.getValue());
+                    ris.put(s.getId(), s);
+                }
+            }
+    return ris;
+}
+
 
     public Scheda readById(Long id)
     {

@@ -9,4 +9,5 @@ import lombok.ToString;
 public class Corso extends Entity
 {
     private String nome;
+    private Long idIstruttore;
 }
