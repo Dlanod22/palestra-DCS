@@ -11,7 +11,6 @@ import com.generation.palestra.dao.ClienteDao;
 import com.generation.palestra.entities.Cliente;
 import com.generation.palestra.entities.Istruttore;
 import com.generation.palestra.entities.PianoAbbonamento;
-import com.generation.palestra.tests.ClienteTest;
 import com.generation.palestra.tests.CorsoTest;
 import com.generation.palestra.tests.IstruttoreTest;
 import com.generation.palestra.tests.ManagerTest;
@@ -39,7 +38,7 @@ public class PalestraApplication {
 
         PianoAbbonamentoTest test5 = new PianoAbbonamentoTest();
         test5.test();
-        
+
         SchedaTest test6 = new SchedaTest();
         test6.test();
 		
