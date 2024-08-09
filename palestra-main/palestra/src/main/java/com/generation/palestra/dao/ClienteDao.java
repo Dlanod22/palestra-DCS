@@ -34,11 +34,11 @@ public class ClienteDao implements IDAO<Cliente>{
 
     private final String readAllClienti = "select p.*, c.* from clienti c join persone p on c.id = p.id";
 
-    private final String readClientiByIdPianoAbbonamento = "select p.*, c.id_piano from clienti c join persone p on c.id = p.id where c.id_piano = ?";
+    private final String readClientiByIdPianoAbbonamento = "select p.*, c.* from clienti c join persone p on c.id = p.id where c.id_piano = ?";
     
-    private final String readClientiByNomeLike = "select p.*, c.id_piano from clienti c join persone p on c.id = p.id where p.nome like(concat('%', ?, '%'))";
+    private final String readClientiByNomeLike = "select p.*, c.* from clienti c join persone p on c.id = p.id where p.nome like(concat('%', ?, '%'))";
 
-    private final String readClientiByFilters = "select p.*, c.id_piano from clienti c join persone p on c.id = p.id where p.nome like(concat('%', ?, '%')) AND c.id_piano = ? ";
+    private final String readClientiByFilters = "select p.*, c.* from clienti c join persone p on c.id = p.id where p.nome like(concat('%', ?, '%')) AND c.id_piano = ? ";
 
     private final String updatePersona = "update persone set nome=?, cognome=?, data_nascita=? where id=?";
 
@@ -112,7 +112,7 @@ public class ClienteDao implements IDAO<Cliente>{
         Map<Long, Entity> ris = new LinkedHashMap<>();
         Map<Long, Map<String, String>> result = null;
 
-        //Controllo se ho il filtro sulla classe oppure no controllando se il suo valore è uguale a zero (zero abbiamo deciso che significa "tutti i pianiAbbonamento").
+        //Controllo se ho il filtro sul piano abbonamento oppure no controllando se il suo valore è uguale a zero (zero abbiamo deciso che significa "tutti i pianiAbbonamento").
         //se è zero applico la query che filtra solo con il 'like' sul nome altrimenti applico quella che utilizza entrambi i filtri
         if(id_piano == 0)
         {
@@ -135,7 +135,7 @@ public class ClienteDao implements IDAO<Cliente>{
     }
 
     @Override
-    public void update(Cliente e, int...idModificato) 
+    public void update(Cliente e) 
     {
         database.executeUpdate(updatePersona,
                                     e.getNome(),
