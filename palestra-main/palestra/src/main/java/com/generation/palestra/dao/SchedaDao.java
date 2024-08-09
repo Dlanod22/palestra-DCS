@@ -47,7 +47,8 @@ public class SchedaDao implements IDAO<Scheda>
                                                             e.getEse6(),
                                                             e.getEse7(),
                                                             e.getEse8(),
-                                                            e.getEse9());
+                                                            e.getEse9(),
+                                                            String.valueOf(e.getId()));
         return idScheda;
     }
 
@@ -79,8 +80,8 @@ public class SchedaDao implements IDAO<Scheda>
                     ris.put(s.getId(), s);
                 }
             }
-    return ris;
-}
+                 return ris;
+    }
 
 
     public Scheda readById(Long id)
@@ -109,7 +110,7 @@ public class SchedaDao implements IDAO<Scheda>
     
 
     @Override
-    public void update(Scheda e, int...idModificato) 
+    public void update(Scheda e) 
     {
         database.executeUpdate(updateScheda, e.getEse1(),e.getEse2(),e.getEse3(),e.getEse4(),e.getEse5(),e.getEse6(),e.getEse7(),e.getEse8(),e.getEse9(), String.valueOf(e.getId()));
     }

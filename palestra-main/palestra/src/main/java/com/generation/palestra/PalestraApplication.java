@@ -7,9 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.generation.palestra.dao.ClienteDao;
-import com.generation.palestra.entities.Cliente;
-import com.generation.palestra.tests.ClienteTest;
+import com.generation.palestra.entities.PianoAbbonamento;
+import com.generation.palestra.tests.CorsoTest;
+import com.generation.palestra.tests.IstruttoreTest;
+import com.generation.palestra.tests.ManagerTest;
+import com.generation.palestra.tests.PianoAbbonamentoTest;
+import com.generation.palestra.tests.SchedaTest;
+
+
 
 @SpringBootApplication
 public class PalestraApplication {
@@ -17,10 +22,14 @@ public class PalestraApplication {
     public static void main(String[] args) 
 	{
         SpringApplication.run(PalestraApplication.class, args);
-        
-		ClienteTest test = new ClienteTest();
 
-        test.test();
+        //CorsoTest test = new CorsoTest();
+        //IstruttoreTest testI = new IstruttoreTest();
+        //ManagerTest testM = new ManagerTest();
+        //PianoAbbonamentoTest testP = new PianoAbbonamentoTest();
+        SchedaTest testS = new SchedaTest();
+
+        
 		
 		
 		/*ClienteDao clienteDao = context.getBean(ClienteDao.class);

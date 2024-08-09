@@ -10,7 +10,7 @@ public interface IDAO<E extends Entity>
 
     public Map<Long, Entity> readAll();
 
-    public void update(E e, int...i);
+    public void update(E e);
 
     public void delete(Long id);
 }

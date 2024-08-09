@@ -59,7 +59,7 @@ public class PianoAbbonamentoDao implements IDAO<PianoAbbonamento> {
     
 
     @Override
-    public void update(PianoAbbonamento e, int...idModificato) 
+    public void update(PianoAbbonamento e) 
     {
         database.executeUpdate(updateAbbonamento, e.getNome(), String.valueOf(e.getId()));
     }
