@@ -18,7 +18,6 @@ public class SchedaTest
     {
         System.out.println("-------------------INIZIO TEST SCHEDA---------------------\n");
 
-        System.out.println("\n-------------------SCHEDA---------------------\n");
             if (schedaDao != null) 
             {
                 System.out.println(schedaDao.readAll());

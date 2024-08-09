@@ -20,7 +20,6 @@ public class ManagerTest
         {
             System.out.println("-------------------INIZIO TEST MANAGER---------------------\n");
 
-            System.out.println("\n-------------------MANAGER---------------------\n");
                 if (managerDao != null) 
                 {
                     System.out.println(managerDao.readAll());

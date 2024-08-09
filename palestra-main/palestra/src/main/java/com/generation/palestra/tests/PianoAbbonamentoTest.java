@@ -21,7 +21,6 @@ public class PianoAbbonamentoTest
         {
             System.out.println("-------------------INIZIO TEST PIANOABBONAMENTO---------------------\n");
 
-            System.out.println("\n-------------------PIANOABBONAMENTO---------------------\n");
                 if (pianoAbbonamentoDao != null) 
                 {
                     System.out.println(pianoAbbonamentoDao.readAll());

@@ -18,7 +18,6 @@ public class CorsoTest
         {
             System.out.println("-------------------INIZIO TEST CORSO---------------------\n");
            
-            System.out.println("\n-------------------CORSO---------------------\n");
             if (corsoDao != null) 
             {
                 System.out.println(corsoDao.readAll());

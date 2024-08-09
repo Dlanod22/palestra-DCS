@@ -9,7 +9,14 @@ import com.generation.palestra.tests.TestCliente;
 
 import com.generation.palestra.dao.ClienteDao;
 import com.generation.palestra.entities.Cliente;
+import com.generation.palestra.entities.Istruttore;
+import com.generation.palestra.entities.PianoAbbonamento;
 import com.generation.palestra.tests.ClienteTest;
+import com.generation.palestra.tests.CorsoTest;
+import com.generation.palestra.tests.IstruttoreTest;
+import com.generation.palestra.tests.ManagerTest;
+import com.generation.palestra.tests.PianoAbbonamentoTest;
+import com.generation.palestra.tests.SchedaTest;
 
 @SpringBootApplication
 public class PalestraApplication {
@@ -18,43 +25,23 @@ public class PalestraApplication {
 	{
         SpringApplication.run(PalestraApplication.class, args);
         
-		ClienteTest test = new ClienteTest();
+		TestCliente test1 = new TestCliente();
+        test1.test();
 
-        test.test();
+        CorsoTest test2 = new CorsoTest();
+        test2.test();
+
+        IstruttoreTest test3 = new IstruttoreTest();
+        test3.test();
+
+        ManagerTest test4 = new ManagerTest();
+        test4.test();
+
+        PianoAbbonamentoTest test5 = new PianoAbbonamentoTest();
+        test5.test();
+        
+        SchedaTest test6 = new SchedaTest();
+        test6.test();
 		
-		
-		/*ClienteDao clienteDao = context.getBean(ClienteDao.class);
-
-        // Crea un nuovo cliente
-        Cliente cliente = new Cliente();
-        cliente.setNome("Mario");
-        cliente.setCognome("Rossi");
-        cliente.setDataNascita(Date.valueOf("1980-01-01"));
-        cliente.setEta(40);
-        cliente.setPeso(70.5);
-        cliente.setAltezza(175);
-        cliente.setSesso('M');
-        cliente.setObiettivo("Perdere peso");
-
-        // Inserisci il cliente nel database
-        Long id = clienteDao.create(cliente);
-
-        // Modifica i dati del cliente
-        cliente.setId(id);
-        cliente.setNome("Luigi");
-        cliente.setCognome("Verdi");
-        cliente.setEta(45);
-        cliente.setPeso(75.0);
-        cliente.setAltezza(180);
-        cliente.setObiettivo("Mantenere peso");
-
-        // Esegui l'update del cliente
-        clienteDao.update(cliente);
-
-        // Stampa i dati aggiornati del cliente
-        Cliente clienteAggiornato = (Cliente) clienteDao.readAll().get(id);
-        System.out.println(clienteAggiornato);*/
-		
-
     }
 }
