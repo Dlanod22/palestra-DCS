@@ -24,10 +24,10 @@ public class PalestraApplication {
 	{
         SpringApplication.run(PalestraApplication.class, args);
         
-		TestCliente test1 = new TestCliente();
-        test1.test();
+		//TestCliente test1 = new TestCliente();
+        //test1.test();
 
-        CorsoTest test2 = new CorsoTest();
+        /*CorsoTest test2 = new CorsoTest();
         test2.test();
 
         IstruttoreTest test3 = new IstruttoreTest();
@@ -40,7 +40,7 @@ public class PalestraApplication {
         test5.test();
 
         SchedaTest test6 = new SchedaTest();
-        test6.test();
+        test6.test();*/
 		
     }
 }

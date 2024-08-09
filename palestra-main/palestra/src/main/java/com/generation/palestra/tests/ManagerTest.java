@@ -22,9 +22,9 @@ public class ManagerTest
 
                 if (managerDao != null) 
                 {
-                    System.out.println(managerDao.readAll());
+                    /*System.out.println(managerDao.readAll());
                 // CREATE
-                       /*Manager m = new Manager();
+                       Manager m = new Manager();
                        m.setNome("Donald");
                        m.setCognome("Guga");
                        m.setDataNascita(Date.valueOf("1983-01-22"));

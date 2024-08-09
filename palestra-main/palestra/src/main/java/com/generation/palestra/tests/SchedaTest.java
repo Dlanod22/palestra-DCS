@@ -20,7 +20,7 @@ public class SchedaTest
 
             if (schedaDao != null) 
             {
-                System.out.println(schedaDao.readAll());
+               /* System.out.println(schedaDao.readAll());
                 System.out.println(schedaDao.readById(1L));
             // CREATE
                     Scheda s = new Scheda();
@@ -33,25 +33,37 @@ public class SchedaTest
                     s.setEse7("FAI");
                     s.setEse8("DI");
                     s.setEse9("BELLO");
+                    s.setId(11L);
 
                 // Inserisci l'istruttore nel database
                    Long id = schedaDao.create(s);
                    System.out.println("\nScheda creata: " + s + "\n");
 
             // UPDATE
-                    /*PianoAbbonamento p = new PianoAbbonamento();
-                    p.setNome("Super piano incredibile DELUXE");
-                    p.setId(4L);
+                    Scheda s = new Scheda();
+                    s.setEse1("Bello");
+                    s.setEse2("di");
+                    s.setEse3("fai");
+                    s.setEse4("che");
+                    s.setEse5("bene");
+                    s.setEse6("sto");
+                    s.setEse7("io");
+                    s.setEse8("stai");
+                    s.setEse9("come");
+                    s.setId(11L);
 
                 // Inserisci l'istruttore nel database
-                   pianoAbbonamentoDao.update(p);
-                   System.out.println("\nPianoAbbonamento creato: " + p + "\n");
+                   schedaDao.update(s);
+                   System.out.println("\nScheda creato: " + s + "\n");
                 
             // DELETE
-                    pianoAbbonamentoDao.delete(4L);*/
+                    schedaDao.delete(11L);
 
             } else {
-            System.out.println("PianoAbbonamentoDao is null");
+            System.out.println("Scheda is null");*/
             }
+
+            System.out.println("-------------------FINE TEST SCHEDA---------------------\n");
+
     }
 }

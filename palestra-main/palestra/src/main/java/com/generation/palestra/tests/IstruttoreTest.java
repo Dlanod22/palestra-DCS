@@ -20,7 +20,7 @@ public class IstruttoreTest
             System.out.println("-------------------INIZIO TEST ISTRUTTORE---------------------\n");
            
             if (istruttoreDao != null) {
-                System.out.println(istruttoreDao.readAll());
+                /*System.out.println(istruttoreDao.readAll());
                 System.out.println(istruttoreDao.readByIdCorso(7L));
 
                 // CREATE

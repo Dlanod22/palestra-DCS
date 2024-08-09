@@ -34,7 +34,7 @@ public class IstruttoreDao implements IDAO<Istruttore>
 
     private final String readAllIstruttore = "select * from persone p inner join istruttori i on p.id = i.id";
 
-    private final String readIstruttoriByIdCorso = "select p.*, c.* from istruttori i join persone p on i.id = p.id join corsi c on i.id = c.id_istruttori where c.id = ?";
+    private final String readIstruttoriByIdCorso = "select p.*, c.* from istruttori i join persone p on i.id = p.id join corsi c on i.id = c.id_istruttore where c.id = ?";
 
     private final String updatePersona = "update persone set nome=?, cognome=?, data_nascita=? where id=?";
  

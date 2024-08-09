@@ -41,12 +41,12 @@ public class TestCliente
         System.out.println("\n-------------------INIZIO TEST CLIENTE---------------------\n");
         
         //LEGGI TUTTI I CLIENTI
-        /* 
-        if (clienteDao != null) {
+         
+        /*if (clienteDao != null) {
             System.out.println(clienteDao.readAll());
         } else {
             System.out.println("clienteDao is null");
-        } */
+        } 
 
 
 

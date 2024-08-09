@@ -13,6 +13,8 @@ import com.generation.palestra.dao.database.Database;
 import com.generation.palestra.entities.Cliente;
 import com.generation.palestra.entities.Entity;
 import com.generation.palestra.entities.PianoAbbonamento;
+import com.generation.palestra.entities.Scheda;
+
 
 @Service
 public class ClienteDao implements IDAO<Cliente>{
@@ -23,6 +25,9 @@ public class ClienteDao implements IDAO<Cliente>{
 
     @Autowired
     private PianoAbbonamentoDao pianoAbbonamentoDao;
+
+    @Autowired
+    private SchedaDao schedaDao;
 
     @Autowired
     private ApplicationContext context;
@@ -78,12 +83,34 @@ public class ClienteDao implements IDAO<Cliente>{
             Cliente c = context.getBean(Cliente.class, coppia.getValue());
             String idPianoStr = coppia.getValue().get("idpiano");
 
+            Scheda s = schedaDao.readById((c.getId()));
+            Scheda d = new Scheda();
+
+            if(s != null)
+            {
+                c.setScheda(s);
+            } 
+            else
+            {
+                d.setEse1("Questa");
+                d.setEse2("Scheda");
+                d.setEse3("è");
+                d.setEse4("Vuota");
+                d.setEse5("L'inserimento");
+                d.setEse6("Viene");
+                d.setEse7("Fatto");
+                d.setEse8("Dall'");
+                d.setEse9("Istruttore");
+                d.setId(c.getId());
+                c.setScheda(d);
+            }
+
             if(idPianoStr != null)
             {
                 PianoAbbonamento p = pianoAbbonamentoDao.readById(Long.parseLong(idPianoStr));
                 c.setPianoAbbonamento(p);
             }
-    
+
             ris.put(c.getId(), c);
         }
     

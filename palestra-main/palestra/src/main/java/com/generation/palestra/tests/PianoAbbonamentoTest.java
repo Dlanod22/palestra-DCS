@@ -23,10 +23,10 @@ public class PianoAbbonamentoTest
 
                 if (pianoAbbonamentoDao != null) 
                 {
-                    System.out.println(pianoAbbonamentoDao.readAll());
+                    /*System.out.println(pianoAbbonamentoDao.readAll());
                     System.out.println(pianoAbbonamentoDao.readById(1L));
                 // CREATE
-                        /*PianoAbbonamento p = new PianoAbbonamento();
+                        PianoAbbonamento p = new PianoAbbonamento();
                         p.setNome("Super piano DELUXE");
                         p.setId(4L);
 
@@ -49,5 +49,7 @@ public class PianoAbbonamentoTest
                 } else {
                 System.out.println("PianoAbbonamentoDao is null");
                 }
+
+                System.out.println("-------------------FINE TEST PIANOABBONAMENTO---------------------\n");
         }
 }

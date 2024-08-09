@@ -42,7 +42,7 @@ public class PianoAbbonamentoDao implements IDAO<PianoAbbonamento>
     @Override
     public Long create(PianoAbbonamento e) 
     {
-        Long idScheda = database.executeUpdate(insertPianoAbbonamento, e.getNome());
+        Long idScheda = database.executeUpdate(insertPianoAbbonamento, e.getNome(), String.valueOf(e.getId()));
         return idScheda;
     }
 
