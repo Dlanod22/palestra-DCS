@@ -10,4 +10,5 @@ import lombok.ToString;
 public class Istruttore extends Persona
 {
     private List<Corso> corsi;
+
 }

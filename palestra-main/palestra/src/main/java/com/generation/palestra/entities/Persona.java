@@ -1,6 +1,7 @@
 package com.generation.palestra.entities;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import lombok.Data;
 
