@@ -71,7 +71,7 @@ public class ClienteTest {
                     c.setIdIstruttore(13L);
                     corsoDao.create(c);*/
                    
-        System.out.println("\n-------------------PIANO ABBONAMENTO---------------------\n");
+         System.out.println("\n-------------------PIANO ABBONAMENTO---------------------\n");
         System.out.println(pianoAbbonamentoDao.readAll());
 
         System.out.println("-------------------FINE TEST------------------\n");

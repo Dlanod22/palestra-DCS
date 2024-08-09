@@ -1,6 +1,8 @@
 package com.generation.palestra.dao;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -10,12 +12,15 @@ import org.springframework.stereotype.Service;
 
 import com.generation.palestra.dao.database.Database;
 import com.generation.palestra.entities.Cliente;
+import com.generation.palestra.entities.Corso;
 import com.generation.palestra.entities.Entity;
 import com.generation.palestra.entities.Istruttore;
 
 @Service
 public class IstruttoreDao implements IDAO<Istruttore>
 {
+    @Autowired
+    private CorsoDao corsoDao;
 
     @Autowired
     private Database database;
@@ -29,7 +34,7 @@ public class IstruttoreDao implements IDAO<Istruttore>
 
     private final String readAllIstruttore = "select * from persone p inner join istruttori i on p.id = i.id";
 
-    private final String readIstruttoriByIdCorso = "select p.* from istruttori i join persone p on i.id = p.id join corsi c on i.id = c.id_istruttori where c.id = ?";
+    private final String readIstruttoriByIdCorso = "select p.*, c.* from istruttori i join persone p on i.id = p.id join corsi c on i.id = c.id_istruttori where c.id = ?";
 
     private final String updatePersona = "update persone set nome=?, cognome=?, data_nascita=? where id=?";
  
@@ -58,8 +63,18 @@ public class IstruttoreDao implements IDAO<Istruttore>
     {
         Map<Long, Entity> ris = new LinkedHashMap<>();
         Map<Long, Map<String, String>> result = database.executeQuery(readAllIstruttore);
-        for(Entry<Long, Map<String, String>> coppia : result.entrySet()){
+        for(Entry<Long, Map<String, String>> coppia : result.entrySet())
+        {
             Istruttore i = context.getBean(Istruttore.class, coppia.getValue());
+
+            Map<Long, Entity> corsi = corsoDao.readByIdIstruttore(i.getId());
+            List<Corso> listaCorsi = new ArrayList<>();
+            for(Entity cls : corsi.values())
+            {
+                listaCorsi.add((Corso)cls);
+            }
+
+            i.setCorsi(listaCorsi);
 
             ris.put(i.getId(), i);
         }
@@ -82,7 +97,7 @@ public class IstruttoreDao implements IDAO<Istruttore>
     }
 
     @Override
-    public void update(Istruttore e, int...idModificato) 
+    public void update(Istruttore e) 
     {
         database.executeUpdate(updatePersona,
                                     e.getNome(),
@@ -91,7 +106,7 @@ public class IstruttoreDao implements IDAO<Istruttore>
                                     String.valueOf(e.getId())
         );
         
-        database.executeUpdate(updateIstruttore, String.valueOf(idModificato), String.valueOf(e.getId()));
+        //database.executeUpdate(updateIstruttore, String.valueOf(idModificato), String.valueOf(e.getId()));
     }
 
     @Override
