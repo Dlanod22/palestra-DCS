@@ -20,10 +20,10 @@ public class CorsoTest
            
             if (corsoDao != null) 
             {
-                /*System.out.println(corsoDao.readAll());
+                System.out.println(corsoDao.readAll());
                 System.out.println(corsoDao.readById(3L));
 
-                   // Update
+               /*    // Update
                         /*Corso corso = new Corso();
                         corso.setId(2L);
                         corso.setNome("Corso di Pilates");

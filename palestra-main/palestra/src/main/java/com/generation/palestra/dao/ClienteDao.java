@@ -91,7 +91,8 @@ public class ClienteDao implements IDAO<Cliente>{
                 c.setScheda(s);
             } 
             else
-            {
+            {   
+                d.setId(c.getId());
                 d.setEse1("Questa");
                 d.setEse2("Scheda");
                 d.setEse3("è");
@@ -101,8 +102,10 @@ public class ClienteDao implements IDAO<Cliente>{
                 d.setEse7("Fatto");
                 d.setEse8("Dall'");
                 d.setEse9("Istruttore");
-                d.setId(c.getId());
+                d.setId_cliente(c.getId());
                 c.setScheda(d);
+                schedaDao.create(d);
+                
             }
 
             if(idPianoStr != null)

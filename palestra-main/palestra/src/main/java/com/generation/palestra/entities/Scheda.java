@@ -15,11 +15,7 @@ public class Scheda extends Entity
     private String ese7;
     private String ese8;
     private String ese9;
+    private Long id_cliente;
 
 }
-
-
-
-
-
 
