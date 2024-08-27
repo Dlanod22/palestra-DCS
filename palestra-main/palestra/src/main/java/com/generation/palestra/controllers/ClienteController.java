@@ -117,7 +117,7 @@ public class ClienteController
 
         if(role != null && role.equals("DIR") && p instanceof Manager){
             //Creo un'utenza standard per lo Cliente in questione (dall'id che mi arriva) usando il servizio .createOrUpdateUser()
-            Cliente s = ClienteService.readById(idCliente);
+            Cliente s = clienteService.readById(idCliente);
             String username = (s.getNome() + "." + s.getCognome()).toLowerCase() + String.valueOf(s.getId());
             String password = "1234";
             clienteService.createOrUpdateUser(idCliente, username, password);
