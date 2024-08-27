@@ -1,5 +1,12 @@
 package com.generation.palestra.services;
 
-public class AppService {
-    
+import org.springframework.stereotype.Service;
+
+import lombok.Data;
+
+@Service
+@Data
+public class AppService 
+{
+    private String message;
 }

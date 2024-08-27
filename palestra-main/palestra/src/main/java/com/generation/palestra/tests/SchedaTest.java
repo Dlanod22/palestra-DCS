@@ -20,8 +20,9 @@ public class SchedaTest
 
             if (schedaDao != null) 
             {
-               /* System.out.println(schedaDao.readAll());
+                System.out.println(schedaDao.readAll());
                 System.out.println(schedaDao.readById(1L));
+                /* 
             // CREATE
                     Scheda s = new Scheda();
                     s.setEse1("CIAO");

@@ -25,20 +25,21 @@ public class SchedaDao implements IDAO<Scheda>
     @Autowired
     private ApplicationContext context;
 
-    private final String insertScheda = "insert into schede(ese1, ese2, ese3, ese4, ese5, ese6, ese7, ese8, ese9, id_cliente) values(?,?,?,?,?,?,?,?,?,?)";
+    private final String insertScheda = "insert into schede(id, ese1, ese2, ese3, ese4, ese5, ese6, ese7, ese8, ese9, id_cliente) values(?, ?,?,?,?,?,?,?,?,?,?)";
 
     private final String readAllSchede = "select * from schede";
 
     private final String readByIdCliente = "SELECT s.* FROM clienti c INNER JOIN schede s ON c.id = s.id_cliente WHERE c.id = ?;";
 
-    private final String updateScheda = "update schede set ese1=?,ese2=?,ese3=?,ese4=?,ese5=?,ese6=?,ese7=?,ese8=?,ese9=? where id=?";
+    private final String updateScheda = "update schede set ese1=?,ese2=?,ese3=?,ese4=?,ese5=?,ese6=?,ese7=?,ese8=?,ese9=? where id_cliente=?";
 
-    private final String deleteScheda = "delete from schede where id=?";
+    private final String deleteScheda = "delete from schede where id_cliente=?";
 
     @Override
     public Long create(Scheda e) 
     {
         Long idScheda = database.executeUpdate(insertScheda, 
+                                                            String.valueOf(e.getId()),
                                                             e.getEse1(),
                                                             e.getEse2(),
                                                             e.getEse3(),
@@ -48,7 +49,7 @@ public class SchedaDao implements IDAO<Scheda>
                                                             e.getEse7(),
                                                             e.getEse8(),
                                                             e.getEse9(),
-                                                            String.valueOf(e.getId()));
+                                                            String.valueOf(e.getId_cliente()));
         return idScheda;
     }
 
