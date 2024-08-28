@@ -18,8 +18,8 @@
         <form action="/area-manager-search" method="get">
             <input type="text" name="nome" id="src-std-nome" placeholder="Cerca cliente per nome">
             <select name="pianoAbbonamento" id="src-std-pianoAbbonamento">
-                <option value="0" selected>TUTTI I PIANIABBONAMENTO</option>
-                <option th:each="pianoAbbonamento : ${listaPianoAbbonamento}" th:value="${corso.id}" th:text="|Nome ${pianoAbbonamento.nome}|"></option>
+                <option value="0" selected>TUTTI I PIANI ABBONAMENTO</option>
+                <option th:each="piano : ${listaPiani}" th:value="${piano.id}" th:text="|${piano.nome}|"></option>
             </select>
             <input type="submit" value="Cerca">
             <a href="/area-manager">Annulla ricerca</a>

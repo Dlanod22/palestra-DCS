@@ -139,14 +139,17 @@ public class ClienteController
         //2) se chi ha richiesto il cambio password è stato in grado di fornire le credenziali corrette della stessa persona che ha effettuato il login
         //se queste condizioni sono verificate eseguo la modifica della password
 
-        if(role != null && role.equals("STUD") && p instanceof Cliente){
+        if(role != null && role.equals("STUD") && p instanceof Cliente)
+        {
             String username = params.get("username");
             String oldPassword = params.get("old-password");
             String newPassword = params.get("new-password");
             Long id = Long.parseLong(params.get("id"));
 
             Persona checkPerson = loginService.login(username, oldPassword);
-            if(checkPerson != null && checkPerson.getId() == p.getId()){
+            
+            if(checkPerson != null && checkPerson.getId() == p.getId())
+            {
                 clienteService.createOrUpdateUser(id, username, newPassword);
                 as.setMessage("Password modificata correttamente");
                 return "redirect:/area-cliente";

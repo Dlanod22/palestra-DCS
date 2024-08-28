@@ -14,6 +14,7 @@ import com.generation.palestra.entities.Cliente;
 import com.generation.palestra.services.AppService;
 import com.generation.palestra.services.CorsoService;
 import com.generation.palestra.services.ClienteService;
+import com.generation.palestra.services.PianoAbbonamentoService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -26,6 +27,9 @@ public class PersonaController {
     
     @Autowired
     private CorsoService corsoService;
+
+    @Autowired
+    private PianoAbbonamentoService pianoAbbonamentoService;
 
     @Autowired
     private ApplicationContext context;
@@ -79,13 +83,15 @@ public class PersonaController {
         Persona p = (Persona)session.getAttribute("persona");
         String role = (String)session.getAttribute("role");
 
-        if(role != null && role.equals("DIR") && p instanceof Manager){
+        if(role != null && role.equals("DIR") && p instanceof Manager)
+        {
             model.addAttribute("persona", (Manager)p);
             model.addAttribute("listaClienti", clienteService.readAll());
             model.addAttribute("listaCorsi", corsoService.readAll());
             
             AppService as = context.getBean(AppService.class);
-            if(as.getMessage() != null){
+            if(as.getMessage() != null)
+            {
                 model.addAttribute("message", as.getMessage());
                 as.setMessage(null);
             }
@@ -101,17 +107,18 @@ public class PersonaController {
     //i parametri di ricerca "nome" e "classe" dai quali estrapoliamo i valori e eseguiamo tramite il service .readByFilters() la query a DB
     @GetMapping("/area-manager-search")
     public String areaManager(
-                    @RequestParam(name = "nome", defaultValue = "") String nome, 
-                    @RequestParam(name = "classe", defaultValue = "0") Long idPiano,
-                    HttpSession session, Model model
-    ){
+                                @RequestParam(name = "nome", defaultValue = "") String nome, 
+                                @RequestParam(name = "piano", defaultValue = "0") Long idPiano,
+                                HttpSession session, Model model
+                             )           
+    {
         Persona p = (Persona)session.getAttribute("persona");
         String role = (String)session.getAttribute("role");
         
         if(role != null && role.equals("DIR") && p instanceof Manager){
             model.addAttribute("persona", (Manager)p);
             model.addAttribute("listaClienti", clienteService.readByFilters(nome, idPiano));
-            model.addAttribute("listaCorsi", corsoService.readAll());
+            model.addAttribute("listaPiani", pianoAbbonamentoService.readAll());
             
             AppService as = context.getBean(AppService.class);
             if(as.getMessage() != null){
