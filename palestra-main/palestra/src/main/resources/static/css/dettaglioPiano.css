@@ -2,13 +2,13 @@
     margin-right: -20px;
 }
 
-#studenti-block {
+#clienti-block {
     width:50vw;
     height: 100px;
     float: left;
 }
 
-#docenti-block {
+#istruttori-block {
     width: 50vw;
     height: 100px;
     float: right;

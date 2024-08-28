@@ -4,24 +4,25 @@ function toggleInsertModal()
     modal.hidden = !modal.hidden;
 }
 
-function openUpdateModal(id, nome, cognome, dataNascita, idClasse)
+function openUpdateModal(id, nome, cognome, dataNascita, idPiano)
 {
     document.querySelector("#update-modal").hidden = false;
     var modId = document.querySelector("#mod-id");
     var modNome = document.querySelector("#mod-nome");
     var modCognome = document.querySelector("#mod-cognome");
     var modDataNascita = document.querySelector("#mod-datanascita");
-    var modClasse = document.querySelector("#mod-classe");
+    var modPiano = document.querySelector("#mod-pianoAbbonamento");
 
     modId.value = id;
     modNome.value = nome;
     modCognome.value = cognome;
     modDataNascita.value = dataNascita;
-    modClasse.value = idClasse;
+    modPiano.value = idPiano;
 }
 
-function toggleUpdateUsernameAndPasssword()
+function closeUpdateModal() 
 {
-    var modal = document.querySelector("#update-user-pass-modal");
-    modal.hidden = !modal.hidden;
+    document.querySelector("#update-modal").hidden = true;
 }
+
+

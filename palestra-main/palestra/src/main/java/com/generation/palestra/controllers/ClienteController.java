@@ -89,12 +89,14 @@ public class ClienteController
 
 
     @PostMapping("/update")
-    public String update(@RequestParam Map<String, String> params, HttpSession session){
+    public String update(@RequestParam Map<String, String> params, HttpSession session)
+    {
         Persona p = (Persona)session.getAttribute("persona");
         String role = (String)session.getAttribute("role");
         AppService as = context.getBean(AppService.class);
         
-        if(role != null && role.equals("DIR") && p instanceof Manager){
+        if(role != null && role.equals("DIR") && p instanceof Manager)
+        {
             //Creo lo Cliente sulla base dei parametri che mi arrivano da frontend, cerco la sua classe di appertenenza dall'id
             //setto la classe allo Cliente ed eseguo la modifica
             Cliente s = context.getBean(Cliente.class, params);
