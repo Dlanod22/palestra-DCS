@@ -1,0 +1,53 @@
+.container {
+    margin-right: -20px;
+}
+
+#studenti-block {
+    width:50vw;
+    height: 100px;
+    float: left;
+}
+
+#docenti-block {
+    width: 50vw;
+    height: 100px;
+    float: right;
+}
+
+/* .children {
+    box-sizing: border-box;
+    width: 25%;
+    padding-right: 20px;
+    float: left;
+} */
+
+.tbl{
+    width: 100%;
+    font-size: 20pt;
+    font-family: 'Courier New', Courier, monospace;
+    border-collapse: collapse;
+}
+
+.tbl td{
+    text-align: center;
+}
+
+.tbl > tbody tr:nth-child(odd){
+    background-color: rgb(216, 255, 160);
+}
+
+.tbl > tbody tr:nth-child(even){
+    background-color: rgb(169, 255, 232);
+}
+
+.modal-form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: bisque;
+    padding: 15px;
+    border: 2px solid rgb(50, 50, 50);
+    border-radius: 5px;
+    z-index: 9999;
+}
