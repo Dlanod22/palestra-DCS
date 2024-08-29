@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>Dettaglio Corso</title>
+    <link rel="stylesheet" href="css/dettaglioCorso.css">
+</head>
+<body>
+    <h2>Corso <span th:text="${corso.nome}"></span></h2>
+    <div class="container">
+        <div class="children" id="clienti-block">
+            <h3>Clienti:</h3>
+            <table class="tbl">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${listaClienti}">
+                        <td th:text="${cliente.nome}"></td>
+                        <td th:text="${cliente.cognome}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="children" id="istruttori-block">
+            <h3>Istruttori:</h3>
+            <table class="tbl">
+                <thead>
+                    <tr>
+                        <td>Nome</td>
+                        <td>Cognome</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="istruttore : ${listaIstruttori}">
+                        <td th:text="${istruttore.nome}"></td>
+                        <td th:text="${istruttore.cognome}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

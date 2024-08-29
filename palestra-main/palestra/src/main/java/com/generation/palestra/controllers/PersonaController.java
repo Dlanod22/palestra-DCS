@@ -62,7 +62,8 @@ public class PersonaController {
         Persona p = (Persona)session.getAttribute("persona");
         String role = (String)session.getAttribute("role");
 
-        if(role != null && role.equals("DOC") && p instanceof Istruttore){
+        if(role != null && role.equals("DOC") && p instanceof Istruttore)
+        {
             model.addAttribute("persona", (Istruttore)p);
 
             AppService as = context.getBean(AppService.class);
@@ -87,7 +88,7 @@ public class PersonaController {
         {
             model.addAttribute("persona", (Manager)p);
             model.addAttribute("listaClienti", clienteService.readAll());
-            model.addAttribute("listaCorsi", corsoService.readAll());
+            model.addAttribute("listaPiani", pianoAbbonamentoService.readAll());
             
             AppService as = context.getBean(AppService.class);
             if(as.getMessage() != null)

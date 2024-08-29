@@ -24,7 +24,7 @@
             <input type="submit" value="Cerca">
             <a href="/area-manager">Annulla ricerca</a>
         </form>
-        
+
         <button onclick="toggleInsertModal()" class="btn-insert">
             <!-- Inserisci nuovo studente -->
             <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" viewBox="0 0 16 16">
@@ -105,8 +105,8 @@
                 <tr>
                     <td><label for="pianoAbbonamento">PianoAbbonamento:</label></td>
                     <td>
-                        <select name="pianoAbbonamento" id="ins-pianoAbbonamento">
-                            <option th:each="pianoAbbonamento : ${listaPianoAbbonamenti}" th:text="|PianoAbbonamento ${pianoAbbonamento.nome}|" th:value="${pianoAbbonamento.id}"></option>
+                        <select name="piano" id="ins-piano">
+                        <option th:each="piano : ${listaPiani}" th:text="${piano.nome}" th:value="${piano.id}"></option>
                         </select>
                     </td>
                 </tr>
@@ -141,10 +141,30 @@
                 <tr>
                     <td><label for="pianoAbbonamento">PianoAbbonamento:</label></td>
                     <td>
-                        <select name="pianoAbbonamento" id="mod-pianoAbbonamento">
-                            <option th:each="pianoAbbonamento : ${listaPiani}" th:text="|PianoAbbonamento ${pianoAbbonamento.nome}|" th:value="${pianoAbbonamento.id}"></option>
-                        </select>
+                            <select name="piano" id="ins-piano">
+                            <option th:each="piano : ${listaPiani}" th:text="${piano.nome}" th:value="${piano.id}"></option>
+                            </select>
                     </td>
+                </tr>
+                <tr>
+                    <td><label for="eta">Eta</label></td>
+                    <td><input type="text" name="eta" id="mod-eta"></td>
+                </tr>
+                <tr>
+                    <td><label for="peso">Peso</label></td>
+                    <td><input type="text" name="peso" id="mod-peso"></td>
+                </tr>
+                <tr>
+                    <td><label for="altezza">Altezza</label></td>
+                    <td><input type="text" name="altezza" id="mod-altezza"></td>
+                </tr>
+                <tr>
+                    <td><label for="sesso">Sesso</label></td>
+                    <td><input type="text" name="sesso" id="mod-sesso"></td>
+                </tr>
+                <tr>
+                    <td><label for="obiettivo">Obiettivo</label></td>
+                    <td><input type="text" name="obiettivo" id="mod-obiettivo"></td>
                 </tr>
                 <tr>
                     <td colspan="2"><input style="width: 100%;" type="submit" value="Modifica cliente"></td>

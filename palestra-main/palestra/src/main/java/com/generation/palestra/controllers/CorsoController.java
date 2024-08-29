@@ -46,7 +46,7 @@ import jakarta.servlet.http.HttpSession;
             String role = (String)session.getAttribute("role");
             if(role != null && (role.equals("DIR") && p instanceof Manager ||
                                 role.equals("DOC") && p instanceof Istruttore)
-            )
+              )
             {
     
                 List<Istruttore> listaIstruttori = istruttoreService.readByIdCorso(idCorso);

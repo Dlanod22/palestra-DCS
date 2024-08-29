@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Per accedere dalla session: <tr th:each="classe : ${session.persona.classi}"> -->
+            <!-- Per accedere dalla session: <tr th:each="classe : ${session.persona.corsi}"> -->
             <tr th:each="corso : ${persona.corsi}">
                 <td th:text="${corso.nome}"></td>
                 <td>
