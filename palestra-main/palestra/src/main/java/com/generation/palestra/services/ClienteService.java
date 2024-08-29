@@ -27,6 +27,21 @@ public class ClienteService extends GenericService<Cliente, ClienteDao>
         return listaClienti;
     }
 
+    public List<Cliente> readByIdCorso(Long idCorso)
+    {
+        Map<Long, Entity> clienti = getRepository().readByIdCorso(idCorso);
+        List<Cliente> listaClienti = new ArrayList<>();
+        
+        for(Entity e : clienti.values())
+        {
+            Cliente s = (Cliente)e;
+            listaClienti.add(s);
+        }
+        return listaClienti;
+    }
+
+
+
     public List<Cliente> readByNomeLike(String nome)
     {
         Map<Long, Entity> clienti = getRepository().readByFilters(nome, 0L);

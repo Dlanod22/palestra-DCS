@@ -51,6 +51,8 @@ public class ClienteDao implements IDAO<Cliente>{
 
     private final String deletePersona = "delete from persone where id=?";
 
+    private final String readClientiByIdCorso = "SELECT persone.*,clienti.* FROM clienti JOIN persone ON clienti.id = persone.id JOIN piani_abbonamento ON clienti.id_piano = piani_abbonamento.id JOIN piano_corsi ON piani_abbonamento.id = piano_corsi.piano_id JOIN corsi ON piano_corsi.corso_id = corsi.id WHERE corsi.id = ?;";
+
     @Override
     public Long create(Cliente e) 
     {
@@ -125,6 +127,24 @@ public class ClienteDao implements IDAO<Cliente>{
     {
         Map<Long, Entity> ris = new LinkedHashMap<>();
         Map<Long, Map<String, String>> result = database.executeQuery(readClientiByIdPianoAbbonamento, String.valueOf(id_piano));
+
+        for(Entry<Long, Map<String, String>> coppia : result.entrySet())
+        {
+            Cliente c = context.getBean(Cliente.class, coppia.getValue());
+            PianoAbbonamento p = pianoAbbonamentoDao.readById(Long.parseLong(coppia.getValue().get("idpiano")));
+            c.setPianoAbbonamento(p);
+            ris.put(c.getId(), c);
+        }
+        
+        return ris;
+    }
+
+
+
+    public Map<Long, Entity> readByIdCorso(Long id_corso) 
+    {
+        Map<Long, Entity> ris = new LinkedHashMap<>();
+        Map<Long, Map<String, String>> result = database.executeQuery(readClientiByIdCorso, String.valueOf(id_corso));
 
         for(Entry<Long, Map<String, String>> coppia : result.entrySet())
         {

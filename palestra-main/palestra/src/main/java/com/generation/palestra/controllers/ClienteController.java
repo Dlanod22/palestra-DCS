@@ -44,12 +44,14 @@ public class ClienteController
 
     //http://localhost:8080/studente/insert
     @PostMapping("/insert")
-    public String insertCliente(@RequestParam Map<String, String> params, HttpSession session){
+    public String insertCliente(@RequestParam Map<String, String> params, HttpSession session)
+    {
         Persona p = (Persona)session.getAttribute("persona");
         String role = (String)session.getAttribute("role");
         AppService as = context.getBean(AppService.class);
 
-        if(role != null && role.equals("DIR") && p instanceof Manager){
+        if(role != null && role.equals("DIR") && p instanceof Manager)
+        {
             Cliente s = context.getBean(Cliente.class, params);
             PianoAbbonamento c = pianoService.readById(Long.parseLong(params.get("piano")));
             s.setPianoAbbonamento(c);
@@ -73,7 +75,8 @@ public class ClienteController
         if(role != null && role.equals("DIR") && p instanceof Manager)
         {
             //Controlliamo che l'id dello Cliente da eliminare sia valido
-            if(idCliente <= 0){
+            if(idCliente <= 0)
+            {
                 as.setMessage("Errore id Cliente non valido");
                 return "redirect:/area-manager";
             }

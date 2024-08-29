@@ -50,7 +50,7 @@ import jakarta.servlet.http.HttpSession;
             {
     
                 List<Istruttore> listaIstruttori = istruttoreService.readByIdCorso(idCorso);
-                List<Cliente> listaClienti = clienteService.readByIdPiano(idCorso);
+                List<Cliente> listaClienti = clienteService.readByIdCorso(idCorso);
                 Corso c = corsoService.readById(idCorso);
         
                 model.addAttribute("listaIstruttori", listaIstruttori);
