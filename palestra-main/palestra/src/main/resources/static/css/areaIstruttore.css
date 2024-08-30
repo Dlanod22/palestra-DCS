@@ -1,58 +1,108 @@
-body{
-    background-color: rgb(139, 90, 192);
+body {
+    background: linear-gradient(120deg, #f3f4f6, #e3e4e8);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
-
-.btn-logout{
-    font-size: 18pt;
-    border-radius: 3px;
-    background-color: brown;
+/* Stile della barra di navigazione */
+.navbar {
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.navbar{
-    background-color: rgb(0, 255, 208);
-    padding: 5px;
+.navbar h2 {
+    margin: 0;
+    font-size: 24pt;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.tbl{
-    width: 100%;
+/* Stile del pulsante di logout */
+.btn-logout {
+    font-size: 16pt;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-logout:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Stile del titolo della lista dei corsi */
+h3 {
     font-size: 20pt;
-    font-family: 'Courier New', Courier, monospace;
+    color: #3498db;
+    margin-left: 20px;
+}
+
+/* Stile della tabella */
+.tbl {
+    width: 90%;
+    margin: 20px auto;
     border-collapse: collapse;
+    font-size: 16pt;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.tbl td{
-    text-align: center;
+.tbl th, .tbl td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
 
-.tbl > tbody tr:nth-child(odd){
-    background-color: rgb(247, 177, 151);
+.tbl th {
+    background-color: #f3f3f3;
+    font-weight: bold;
 }
 
-.tbl > tbody tr:nth-child(even){
-    background-color: rgb(255, 199, 179);
+.tbl tr:nth-child(odd) {
+    background-color: #f9f9f9;
 }
 
-.modal-form{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: bisque;
-    padding: 15px;
-    border: 2px solid rgb(50, 50, 50);
-    border-radius: 5px;
-    z-index: 9999;
+.tbl tr:nth-child(even) {
+    background-color: #fff;
 }
 
-#message-modal{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgb(0, 130, 236);
-    padding: 15px;
-    border: 2px solid rgb(50, 50, 50);
-    border-radius: 5px;
-    z-index: 9999;
+.tbl tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Stile del pulsante di dettaglio del corso */
+.tbl button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex; /* Per centrare l'icona */
+    align-items: center; /* Centra l'icona verticalmente */
+    justify-content: center; /* Centra l'icona orizzontalmente */
+}
+
+.tbl button:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+.tbl button svg {
+    fill: white; /* Colore dell'icona */
 }

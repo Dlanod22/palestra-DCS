@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <head>
     <title>Dettaglio Corso</title>
-    <link rel="stylesheet" href="css/dettaglioCorso.css">
+    <link rel="stylesheet" href="css/dettaglioPiano.css">
 </head>
 <body>
-    <h2>Corso <span th:text="${corso.nome}"></span></h2>
+    <h2><span th:text="${corso.nome}"></span></h2>
     <div class="container">
         <div class="children" id="clienti-block">
-            <h3>Clienti:</h3>
+            <h3>Clienti che possono accedere al corso:</h3>
+
+            <!-- Per esempio se inseriamo le credenziali "ffontana, password13" 
+                 e scegliendo "corso di nuoto", visualizzeremo tutti i clienti che possono accedere
+                 a questo corso: quindi i clienti con il pianoabbonamento plus e i clienti con
+                 pianoabbonamento premium, per un totale di 9 clienti -->
             <table class="tbl">
                 <thead>
                     <tr>
@@ -19,23 +24,6 @@
                     <tr th:each="cliente : ${listaClienti}">
                         <td th:text="${cliente.nome}"></td>
                         <td th:text="${cliente.cognome}"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="children" id="istruttori-block">
-            <h3>Istruttori:</h3>
-            <table class="tbl">
-                <thead>
-                    <tr>
-                        <td>Nome</td>
-                        <td>Cognome</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="istruttore : ${listaIstruttori}">
-                        <td th:text="${istruttore.nome}"></td>
-                        <td th:text="${istruttore.cognome}"></td>
                     </tr>
                 </tbody>
             </table>
