@@ -18,12 +18,14 @@
                     <tr>
                         <th>Nome</th>
                         <th>Cognome</th>
+                        <th>Scheda</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="cliente : ${listaClienti}">
                         <td th:text="${cliente.nome}"></td>
                         <td th:text="${cliente.cognome}"></td>
+                        <td th:text="${cliente.scheda.ese1}"></td>
                     </tr>
                 </tbody>
             </table>
