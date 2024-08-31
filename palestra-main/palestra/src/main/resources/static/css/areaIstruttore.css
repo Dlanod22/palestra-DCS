@@ -8,7 +8,7 @@ body {
 
 /* Stile della barra di navigazione */
 .navbar {
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background: linear-gradient(90deg, #ff6f00, #ffb74d); /* Sfuma dall'arancio scuro all'arancio chiaro */
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@ body {
 .btn-logout {
     font-size: 16pt;
     padding: 10px 20px;
-    background-color: #e74c3c;
+    background-color: #c0392b; /* Bordeaux */
     color: white;
     border: none;
     border-radius: 25px;
@@ -37,14 +37,14 @@ body {
 }
 
 .btn-logout:hover {
-    background-color: #c0392b;
+    background-color: #a8322b; /* Bordeaux più scuro */
     transform: scale(1.05);
 }
 
 /* Stile del titolo della lista dei corsi */
 h3 {
     font-size: 20pt;
-    color: #3498db;
+    color: #ff6f00; /* Arancio */
     margin-left: 20px;
 }
 
@@ -68,8 +68,13 @@ h3 {
 }
 
 .tbl th {
-    background-color: #f3f3f3;
+    background-color: #ff6f00; /* Arancio vivace */
+    color: white; /* Testo bianco */
     font-weight: bold;
+    border: 1px solid #ff9900; /* Bordo arancione chiaro */
+    text-align: center;
+    text-transform: uppercase; /* Maiuscolo per maggiore enfasi */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Leggera ombra sul testo */
 }
 
 .tbl tr:nth-child(odd) {
@@ -86,7 +91,7 @@ h3 {
 
 /* Stile del pulsante di dettaglio del corso */
 .tbl button {
-    background-color: #2ecc71;
+    background-color: #e73c29; /* Rosso pastello scuro */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -99,7 +104,7 @@ h3 {
 }
 
 .tbl button:hover {
-    background-color: #27ae60;
+    background-color: #ffa000; /* Arancio pastello più scuro */
     transform: scale(1.05);
 }
 

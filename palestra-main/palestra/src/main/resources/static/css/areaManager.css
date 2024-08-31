@@ -98,7 +98,7 @@ body {
 
 /* Stile dei pulsanti nelle celle */
 .tbl-clienti button {
-    background-color: #ffb74d; /* Arancio pastello scuro per i pulsanti nella tabella */
+    background-color: #e73c29; /* Arancio pastello scuro per i pulsanti nella tabella */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -228,7 +228,7 @@ body {
 
 /* Stile per il pulsante di inserimento */
 .btn-insert {
-    background-color: #ffb74d; /* Arancio pastello per il pulsante di inserimento */
+    background-color: #e73c29; /* Arancio pastello per il pulsante di inserimento */
     color: white; /* Testo bianco */
     border: 2px solid #ffa000; /* Bordo arancio pastello scuro */
     border-radius: 50%; /* Bordo circolare */

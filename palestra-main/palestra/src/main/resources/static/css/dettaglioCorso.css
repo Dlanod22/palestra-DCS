@@ -1,0 +1,182 @@
+/* Stile per il corpo della pagina */
+body {
+    background: url('multimediale/TBT-036.jpg') no-repeat center center fixed;
+    background-size: cover; /* Adatta l'immagine per coprire l'intero sfondo */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+/* Stile per l'intestazione delle serie nella scheda */
+.serie-header {
+    background: linear-gradient(135deg, #ff6f00, #ffb74d); /* Arancio scuro sfumato verso arancio chiaro */
+    color: #333; /* Colore del testo nero scuro per contrasto */
+    font-weight: bold; /* Grassetto per il testo */
+    padding: 8px; /* Spaziatura interna */
+    text-align: center; /* Centra il testo */
+    border-radius: 5px; /* Angoli arrotondati */
+}
+
+/* Stile per il contenitore */
+.container {
+    width: 50%; /* Ridotto ulteriormente per diminuire lo spazio bianco */
+    margin: 20px auto; /* Centra il contenitore orizzontalmente e aggiunge spazio sopra e sotto */
+    padding: 10px; /* Riduce la spaziatura interna */
+    background: rgba(255, 255, 255, 0.8); /* Sfondo bianco semi-trasparente */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per le intestazioni principali sopra la tabella */
+h2, h3 {
+    color: #ff6f00; /* Arancione */
+    margin: 20px 0; /* Spazio sopra e sotto le intestazioni */
+    text-align: center; /* Centra il testo */
+}
+
+/* Stile della tabella */
+.tbl {
+    width: 100%; /* Tabella ancora centrata, ma adattata alla larghezza del contenitore */
+    max-width: 800px; /* Imposta una larghezza massima per la tabella */
+    border-collapse: collapse;
+    font-size: 16pt;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Centra la tabella orizzontalmente */
+    text-align: center; /* Centra tutto il contenuto della tabella */
+}
+
+.tbl th, .tbl td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle; /* Centra verticalmente il contenuto della cella */
+}
+
+.tbl th {
+    background-color: #ff6f00; /* Arancio vivace */
+    font-weight: bold;
+    color: white;
+    border: 1px solid #ff9900; /* Bordo arancione chiaro */
+    text-transform: uppercase; /* Maiuscolo per maggiore enfasi */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Leggera ombra sul testo */
+}
+
+.tbl tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.tbl tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.tbl tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Stile dei pulsanti */
+button {
+    background-color: #e73c29; /* Rosso pastello scuro */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #ffa000; /* Arancio pastello più scuro */
+    transform: scale(1.05);
+}
+
+button svg {
+    fill: white; /* Colore dell'icona */
+}
+
+/* Stile della scheda nascosta */
+.scheda-container {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.scheda-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14pt;
+    color: #333;
+}
+
+.scheda-container td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.scheda-container .serie-header {
+    background: linear-gradient(135deg, #ff6f00, #ffb74d); /* Arancio scuro sfumato verso arancio chiaro */
+    color: #333; /* Testo nero più scuro */
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Stile del form nascosto */
+.modal-form {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-form table {
+    width: 100%;
+    font-size: 14pt;
+}
+
+.modal-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.modal-form input[type="submit"] {
+    background-color: #c0392b; /* Bordeaux */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.modal-form input[type="submit"]:hover {
+    background-color: #a8322b; /* Bordeaux più scuro */
+    transform: scale(1.05);
+}
+
+.video-background {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
