@@ -1,33 +1,176 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
-    <title>Palestra</title>
-    <link rel="stylesheet" href="css/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Gym :) - Login</title>
+    <style>
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #ff7828;
+            text-align: center;
+            font-size: 45px;
+        }
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #fff; /* Colore di sfondo della pagina */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Stile per il menu */
+        nav {
+            background-color: rgba(255, 120, 40, 0.8); /* Colore di sfondo del menu */
+            overflow: hidden; /* Per evitare che i contenuti escano dal contenitore */
+            padding: 15px 0;
+            display: flex;
+            align-items: center; /* Allinea verticalmente il contenuto */
+            justify-content: center; /* Centra il contenuto del menu orizzontalmente */
+            margin-bottom: 20px; /* Spazio sotto il menu */     
+        }
+
+        /* Stile per i link del menu */
+        nav a {
+            display: inline-block;
+            color: #fff; /* Colore del testo */
+            text-align: center; /* Allinea il testo al centro del link */
+            padding: 14px 20px; /* Spaziatura interna */
+            text-decoration: none; /* Rimuove la sottolineatura */
+            font-size: 18px; /* Dimensione del testo */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: background-color 0.3s, color 0.3s; /* Aggiunge una transizione fluida */
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        /* Stile per i link al passaggio del mouse */
+        nav a:hover {
+            background-color: #ffffff; /* Colore di sfondo al passaggio del mouse */
+            color: #ff7828; /* Colore del testo al passaggio del mouse */
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* Porta il contenuto sopra il video */
+            padding: 20px;
+        }
+
+        /* Stile per il contenitore principale */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 5px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column; /* Disporre gli elementi verticalmente */
+            align-items: center; /* Allinea tutti gli elementi al centro orizzontalmente */
+            box-sizing: border-box; /* Include padding e bordi nella larghezza totale */
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center; /* Centra il contenuto delle celle */
+        }
+
+        label {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #333; /* Colore del testo per il modulo */
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            font-size: 16pt;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px; /* Angoli arrotondati per i campi di input */
+            transition: box-shadow 0.3s ease;
+            background-color: #f9f9f9; /* Colore di sfondo leggero per i campi di input */
+            width: 100%;
+            text-align: center; /* Centra il testo all'interno del campo di input */
+        }
+
+        input[type="submit"] {
+            background-color: #ff7828;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16pt;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff5722;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
+
 <body>
-    <div class="main-div">
-        <div class="login-form">
+    <video class="video-background" autoplay muted loop>
+        <source src="multimediale/5886425139284810463.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
+
+    <nav>
+        <div class="menu-links">
+            <a href="home.html">Home</a>
+            <a href="chi-siamo.html">Chi Siamo</a>
+            <a href="recensioni.html">Recensioni</a>
+            <a href="abbonamenti.html">Abbonamenti</a>
+            <a href="corsi.html">Corsi</a>
+            <a href="login.html">Accedi</a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="form-container">
+            <h1>Accedi</h1>
             <form action="/login" method="post">
                 <table>
                     <tr>
                         <td><label for="username">Username:</label></td>
+                    </tr>
+                    <tr>
                         <td><input type="text" name="username" id="username"></td>
                     </tr>
                     <tr>
                         <td><label for="password">Password:</label></td>
+                    </tr>
+                    <tr>
                         <td><input type="password" name="password" id="password"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="submit" value="Esegui login"></td>
+                        <td><input type="submit" value="Esegui login"></td>
                     </tr>
                 </table>
             </form>
         </div>
-    </div>
-
-    <div id="message-modal" th:if="${message} != null">
-        <button onclick="document.querySelector('#message-modal').hidden=true">Chiudi</button>
-        <hr>
-        <p th:text="${message}"></p>
     </div>
 </body>
 </html>

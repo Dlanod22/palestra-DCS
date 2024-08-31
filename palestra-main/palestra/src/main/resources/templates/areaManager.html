@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <head>
-    <title>Area Cliente</title>
+    <title>Area Manager</title>
     <link rel="stylesheet" href="css/areaManager.css">
     <script src="js/funzioni.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
     <nav class="navbar">
@@ -21,9 +23,13 @@
                 <option value="0" selected>TUTTI I PIANI ABBONAMENTO</option>
                 <option th:each="piano : ${listaPiani}" th:value="${piano.id}" th:text="${piano.nome}"></option>
             </select>
-            <input type="submit" value="Cerca">
-            <a href="/area-manager">Annulla ricerca</a>
+            <button type="submit" class="btn-search">
+                <i class="fas fa-search"></i>
+            </button>
+            <button type="button" onclick="window.location.href='/area-manager';" class="btn-cancel">Annulla ricerca</button>
         </form>
+        
+        
 
         <button onclick="toggleInsertModal()" class="btn-insert">
             <!-- Inserisci nuovo studente -->
@@ -33,54 +39,56 @@
             </svg>
         </button>
         
-        <table class="tbl-clienti">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Cognome</th>
-                    <th>Data Nascita</th>
-                    <th>Piano Abbonamento</th>
-                    <th>Modifica</th>
-                    <th>Elimina</th>
-                    <th>Utenza</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="cliente : ${listaClienti}">
-                    <td th:text="${cliente.nome}"></td>
-                    <td th:text="${cliente.cognome}"></td>
-                    <td th:text="${cliente.dataNascita}"></td>
-                    <td th:text="${cliente.pianoAbbonamento.nome}"></td>
-                    <td>
-                        <button th:attr="onclick=|openUpdateModal('${cliente.id}', '${cliente.nome}', '${cliente.cognome}', '${cliente.dataNascita}', '${cliente.pianoAbbonamento.id}')|">
-                            <!-- Tasto Modifica -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
-                            </svg>
-                        </button>
-                    </td>
-                    <td>
-                        <a th:href="|/cliente/delete/${cliente.id}|">
-                            <button>
-                                <!-- Tasto Elimina -->
+        <div class="tbl-clienti-container">
+            <table class="tbl-clienti">
+                <thead>
+                    <tr>
+                        
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>Data Nascita</th>
+                        <th>Piano Abbonamento</th>
+                        <th>Modifica</th>
+                        <th>Elimina</th>
+                        <th>Utenza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente : ${listaClienti}">
+                          
+                        <td th:text="${cliente.nome}"></td>
+                        <td th:text="${cliente.cognome}"></td>
+                        <td th:text="${cliente.dataNascita}"></td>
+                        <td th:text="${cliente.pianoAbbonamento.nome}"></td>
+                        <td>
+                            <button th:attr="onclick=|openUpdateModal('${cliente.id}', '${cliente.nome}', '${cliente.cognome}', '${cliente.dataNascita}', '${cliente.pianoAbbonamento.id}')|">
+                                <!-- Tasto Modifica -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" viewBox="0 0 16 16">
-                                    <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
                                 </svg>
                             </button>
-                        </a>
-                    </td>
-                    <td>
-                        <!-- Tasto crea utenza
-                            Questo tasto esegue una richiesta all'endpoint adibito alla creazione dell'utenza per lo studente
-                        -->
-                        <a th:href="|/cliente/createUser/${cliente.id}|">
-                            <button>Crea utenza</button>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                        </td>
+                        <td>
+                            <a th:href="|/cliente/delete/${cliente.id}|">
+                                <button>
+                                    <!-- Tasto Elimina -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+                                    </svg>
+                                </button>
+                            </a>
+                        </td>
+                        <td>
+                            <!-- Tasto crea utenza -->
+                            <a th:href="|/cliente/createUser/${cliente.id}|">
+                                <button>Crea utenza</button>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
 
     <div id="insert-modal" class="modal-form" hidden>
         <button onclick="toggleInsertModal()" style="background-color: crimson;">

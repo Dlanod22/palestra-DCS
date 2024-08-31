@@ -11,7 +11,7 @@ body {
 .btn-logout {
     font-size: 16pt;
     padding: 10px 20px;
-    background-color: #e74c3c;
+    background-color: #c0392b; /* Bordeaux per il pulsante di logout */
     color: white;
     border: none;
     border-radius: 25px;
@@ -20,13 +20,13 @@ body {
 }
 
 .btn-logout:hover {
-    background-color: #c0392b;
+    background-color: #a8322b; /* Bordeaux più scuro al passaggio del mouse */
     transform: scale(1.05);
 }
 
 /* Stile della barra di navigazione */
 .navbar {
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background: linear-gradient(90deg, #ff6f00, #ffb74d); /* Sfuma dall'arancio scuro all'arancio chiaro */
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -53,7 +53,7 @@ body {
 }
 
 #src-std-nome:focus, #src-std-piano:focus {
-    box-shadow: 0 0 10px rgba(50, 115, 220, 0.5);
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.5); /* Colore arancione per il focus */
 }
 
 #src-std-piano {
@@ -98,7 +98,7 @@ body {
 
 /* Stile dei pulsanti nelle celle */
 .tbl-clienti button {
-    background-color: #2ecc71;
+    background-color: #ffb74d; /* Arancio pastello scuro per i pulsanti nella tabella */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -108,7 +108,7 @@ body {
 }
 
 .tbl-clienti button:hover {
-    background-color: #27ae60;
+    background-color: #ffa000; /* Arancio pastello più scuro al passaggio del mouse */
     transform: scale(1.05);
 }
 
@@ -132,7 +132,7 @@ body {
 .modal-form h3 {
     margin-top: 0;
     font-size: 20pt;
-    color: #3498db;
+    color: #ff6f00; /* Arancio per il titolo del modale */
 }
 
 .modal-form label {
@@ -156,11 +156,11 @@ body {
 .modal-form input[type="text"]:focus,
 .modal-form input[type="date"]:focus,
 .modal-form select:focus {
-    box-shadow: 0 0 10px rgba(50, 115, 220, 0.5);
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.5); /* Colore arancione per il focus */
 }
 
 .modal-form input[type="submit"] {
-    background-color: #3498db;
+    background-color: #ff6f00; /* Arancio per il pulsante di submit */
     color: white;
     border: none;
     padding: 10px;
@@ -172,7 +172,7 @@ body {
 }
 
 .modal-form input[type="submit"]:hover {
-    background-color: #2980b9;
+    background-color: #fb8c00; /* Arancio più scuro al passaggio del mouse */
     transform: scale(1.05);
 }
 
@@ -201,9 +201,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #3498db;
+    background-color: #ff6f00; /* Arancio per il modale dei messaggi */
     padding: 20px;
-    border: 2px solid #2980b9;
+    border: 2px solid #fb8c00; /* Arancio più scuro per il bordo */
     border-radius: 10px;
     z-index: 10000;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -226,10 +226,11 @@ body {
     }
 }
 
+/* Stile per il pulsante di inserimento */
 .btn-insert {
-    background-color: #2ecc71; /* Verde brillante */
+    background-color: #ffb74d; /* Arancio pastello per il pulsante di inserimento */
     color: white; /* Testo bianco */
-    border: 2px solid #27ae60; /* Bordo leggermente più scuro */
+    border: 2px solid #ffa000; /* Bordo arancio pastello scuro */
     border-radius: 50%; /* Bordo circolare */
     padding: 10px; /* Padding per spaziatura */
     cursor: pointer; /* Icona del mouse a forma di mano */
@@ -240,10 +241,79 @@ body {
 }
 
 .btn-insert:hover {
-    background-color: #27ae60; /* Colore di sfondo più scuro al passaggio del mouse */
+    background-color: #ffa000; /* Arancio pastello più scuro al passaggio del mouse */
     transform: scale(1.1); /* Leggero ingrandimento al passaggio del mouse */
 }
 
 .btn-insert svg {
     fill: white; /* Colore dell'icona */
+}
+
+/* Stile dell'immagine di sfondo */
+.image-background {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Posiziona l'immagine dietro altri contenuti */
+}
+
+.btn-search {
+    background-color: #ff6f00; /* Colore arancio per il pulsante cerca */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16pt;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-search i {
+    margin: 0; /* Rimuovi margine extra intorno all'icona */
+}
+
+.btn-search:hover {
+    background-color: #fb8c00; /* Colore arancio più scuro al passaggio del mouse */
+    transform: scale(1.05);
+}
+
+/* Evidenzia le intestazioni della tabella */
+.tbl-clienti th:nth-child(1), /* Nome */
+.tbl-clienti th:nth-child(2), /* Cognome */
+.tbl-clienti th:nth-child(3), /* Data di Nascita */
+.tbl-clienti th:nth-child(4), /* Piano Abbonamento */
+.tbl-clienti th:nth-child(5), /* Modifica */
+.tbl-clienti th:nth-child(6),
+.tbl-clienti th:nth-child(7),
+.tbl-clienti th:nth-child(8) /* Elimina Utenza */ {
+    background-color: orange; /* Colore di evidenziazione arancio scuro */
+    color: white; /* Colore del testo bianco per contrasto */
+    font-weight: bold; /* Grassetto per maggiore visibilità */
+    border: 1px solid #ff9900; /* Bordo arancione per le celle */
+}
+
+/* Stile per l'intestazione della colonna ID cliente */
+.tbl-clienti th.cliente-id {
+    background-color: orange; /* Colore di sfondo arancione */
+    color: white; /* Colore del testo bianco per contrastare con lo sfondo arancione */
+}
+
+/* Stile per le celle della colonna ID cliente */
+.tbl-clienti td.cliente-id {
+    background-color: #ffcc99; /* Colore di sfondo arancione chiaro per le celle */
+    color: #333; /* Colore del testo */
+    font-weight: bold; /* Rende il testo in grassetto */
+}
+
+/* Opzionale: Aggiungi un bordo per distinguere meglio la colonna */
+.tbl-clienti td.cliente-id, 
+.tbl-clienti th.cliente-id {
+    border: 1px solid #ff9900; /* Bordo arancione per le celle */
 }
