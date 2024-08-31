@@ -46,7 +46,6 @@ public class PianoController {
             List<Cliente> listaClienti = clienteService.readByIdPiano(idPianoAbbonamento);
             PianoAbbonamento c = pianoAbbonamentoService.readById(idPianoAbbonamento);
     
-          
             model.addAttribute("listaClienti", listaClienti);
             model.addAttribute("pianoAbbonamento", c);
     

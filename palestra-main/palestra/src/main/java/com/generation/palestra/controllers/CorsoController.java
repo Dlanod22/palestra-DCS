@@ -39,11 +39,13 @@ import jakarta.servlet.http.HttpSession;
         @Autowired
         private CorsoService corsoService;
     
-        //http://localhost:8080/classe?id=[VALORE]
+        //http://localhost:8080/corso?id=[VALORE]
         @GetMapping("/corso")
-        public String dettaglioCorso(@RequestParam(name = "id", defaultValue = "0") Long idCorso, HttpSession session, Model model){
+        public String dettaglioCorso(@RequestParam(name = "id", defaultValue = "0") Long idCorso, HttpSession session, Model model)
+        {
             Persona p = (Persona)session.getAttribute("persona");
             String role = (String)session.getAttribute("role");
+
             if(role != null && (role.equals("DIR") && p instanceof Manager ||
                                 role.equals("DOC") && p instanceof Istruttore)
               )

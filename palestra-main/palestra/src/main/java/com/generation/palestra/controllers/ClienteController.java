@@ -100,8 +100,8 @@ public class ClienteController
         
         if(role != null && role.equals("DIR") && p instanceof Manager)
         {
-            //Creo lo Cliente sulla base dei parametri che mi arrivano da frontend, cerco la sua classe di appertenenza dall'id
-            //setto la classe allo Cliente ed eseguo la modifica
+            //Creo il Cliente sulla base dei parametri che mi arrivano da frontend, cerco il suo piano dall'id
+            //setto il piano al Cliente ed eseguo la modifica
             Cliente s = context.getBean(Cliente.class, params);
             PianoAbbonamento c = pianoService.readById(Long.parseLong(params.get("piano")));
 

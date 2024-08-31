@@ -133,6 +133,32 @@ public class ClienteDao implements IDAO<Cliente>{
             Cliente c = context.getBean(Cliente.class, coppia.getValue());
             PianoAbbonamento p = pianoAbbonamentoDao.readById(Long.parseLong(coppia.getValue().get("idpiano")));
             c.setPianoAbbonamento(p);
+
+            Scheda s = schedaDao.readById((c.getId()));
+            Scheda d = new Scheda();
+
+            if(s != null)
+            {
+                c.setScheda(s);
+            } 
+            else
+            {   
+                d.setId(c.getId());
+                d.setEse1("Questa");
+                d.setEse2("Scheda");
+                d.setEse3("è");
+                d.setEse4("Vuota");
+                d.setEse5("L'inserimento");
+                d.setEse6("Viene");
+                d.setEse7("Fatto");
+                d.setEse8("Dall'");
+                d.setEse9("Istruttore");
+                d.setId_cliente(c.getId());
+                c.setScheda(d);
+                schedaDao.create(d);
+                
+            }
+
             ris.put(c.getId(), c);
         }
         
@@ -151,6 +177,32 @@ public class ClienteDao implements IDAO<Cliente>{
             Cliente c = context.getBean(Cliente.class, coppia.getValue());
             PianoAbbonamento p = pianoAbbonamentoDao.readById(Long.parseLong(coppia.getValue().get("idpiano")));
             c.setPianoAbbonamento(p);
+
+            Scheda s = schedaDao.readById((c.getId()));
+            Scheda d = new Scheda();
+
+            if(s != null)
+            {
+                c.setScheda(s);
+            } 
+            else
+            {   
+                d.setId(c.getId());
+                d.setEse1("Questa");
+                d.setEse2("Scheda");
+                d.setEse3("è");
+                d.setEse4("Vuota");
+                d.setEse5("L'inserimento");
+                d.setEse6("Viene");
+                d.setEse7("Fatto");
+                d.setEse8("Dall'");
+                d.setEse9("Istruttore");
+                d.setId_cliente(c.getId());
+                c.setScheda(d);
+                schedaDao.create(d);
+                
+            }
+
             ris.put(c.getId(), c);
         }
         

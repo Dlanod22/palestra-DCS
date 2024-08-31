@@ -2,34 +2,157 @@
 <head>
     <title>Dettaglio Corso</title>
     <link rel="stylesheet" href="css/dettaglioPiano.css">
+    <script>
+        function toggleScheda(button) {
+            var schedaContainer = button.nextElementSibling;
+            if (schedaContainer.style.display === "none") {
+                schedaContainer.style.display = "block";
+                button.textContent = "Nascondi scheda";
+            } else {
+                schedaContainer.style.display = "none";
+                button.textContent = "Mostra scheda";
+            }
+        }
+    </script>
+     <style>
+        .serie-header {
+            background-color: #68b5f5b9; /* Blu leggero */
+            color: hsl(0, 0%, 0%); /* Colore del testo blu più scuro */
+            font-weight: bold; /* Grassetto per il testo */
+        }
+    </style>
 </head>
 <body>
     <h2><span th:text="${corso.nome}"></span></h2>
     <div class="container">
         <div class="children" id="clienti-block">
             <h3>Clienti che possono accedere al corso:</h3>
-
-            <!-- Per esempio se inseriamo le credenziali "ffontana, password13" 
-                 e scegliendo "corso di nuoto", visualizzeremo tutti i clienti che possono accedere
-                 a questo corso: quindi i clienti con il pianoabbonamento plus e i clienti con
-                 pianoabbonamento premium, per un totale di 9 clienti -->
             <table class="tbl">
                 <thead>
                     <tr>
                         <th>Nome</th>
                         <th>Cognome</th>
                         <th>Scheda</th>
+                        <th>Modifica</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr th:each="cliente : ${listaClienti}">
                         <td th:text="${cliente.nome}"></td>
                         <td th:text="${cliente.cognome}"></td>
-                        <td th:text="${cliente.scheda.ese1}"></td>
+                        <td>
+                            <!-- Pulsante per mostrare/nascondere la scheda -->
+                            <button class="toggle-btn" onclick="toggleScheda(this)">Mostra scheda</button>
+                    
+                            <!-- Mini tabella nascosta inizialmente -->
+                            <div class="scheda-container" style="display: none;">
+                                <table>
+                                    <tr>
+                                        <td class="serie-header"> <strong>Serie 1</strong></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese1}"></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese2}"></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese3}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serie-header"> <strong>Serie 2</h1></strong>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese4}"></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese5}"></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese6}"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="serie-header"> <strong>Serie 3</strong></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese7}"></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese8}"></td>
+                                    </tr>
+                                    <tr th:each="esercizio : ${cliente.scheda}">
+                                        <td th:text="${esercizio.ese9}"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <button onclick="document.querySelector('#update-scheda').hidden = false">
+                                <!-- Tasto Modifica -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                </svg>
+                            </button>
+                        </td>
+                        <td>
+                            <div id="update-scheda" class="modal-form" hidden>
+                                <button onclick="document.querySelector('#update-scheda').hidden = true" style="background-color: crimson;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
+                                    </svg>
+                                </button>
+                                <form th:action="@{/updateScheda(id=${cliente.id})}" method="post">
+                                    <input type="hidden" name="id" id="mod-id">
+                                    <table>
+                                        <tr>
+                                            <td><label for="ese1">Ese 1</label></td>
+                                            <td><input type="text" name="ese1" id="mod-ese1"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese2">ese 2</label></td>
+                                            <td><input type="text" name="ese2" id="mod-ese2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese3">ese 3</label></td>
+                                            <td><input type="text" name="ese3" id="mod-ese3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese4">ese 4</label></td>
+                                            <td><input type="text" name="ese4" id="mod-ese4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese5">ese 5</label></td>
+                                            <td><input type="text" name="ese5" id="mod-ese5"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese6">ese 6</label></td>
+                                            <td><input type="text" name="ese6" id="mod-ese6"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese7">ese 7</label></td>
+                                            <td><input type="text" name="ese7" id="mod-ese7"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese8">ese 8</label></td>
+                                            <td><input type="text" name="ese8" id="mod-ese8"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label for="ese9">ese 9</label></td>
+                                            <td><input type="text" name="ese9" id="mod-ese9"></td>
+                                        </tr>
+                                       
+                                        <tr>
+                                            <td colspan="2"><input style="width: 100%;" type="submit" value="Modifica cliente"></td>
+                                        </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
+
     </div>
 </body>
 </html>

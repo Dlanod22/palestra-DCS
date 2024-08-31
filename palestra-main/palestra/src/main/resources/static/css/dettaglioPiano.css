@@ -73,3 +73,25 @@ h2 {
 .tbl tr:hover {
     background-color: #f1f1f1;
 }
+
+
+.toggle-btn {
+    background-color: #3498db; /* Colore di sfondo del pulsante */
+    color: white; /* Colore del testo del pulsante */
+    border: none;
+    border-radius: 5px; /* Angoli arrotondati */
+    padding: 10px 20px; /* Spaziatura interna */
+    cursor: pointer; /* Icona del mouse a forma di mano */
+    font-size: 16pt;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-btn:hover {
+    background-color: #2980b9; /* Colore blu scuro al passaggio del mouse */
+    transform: scale(1.05);
+}
+
+.scheda-container {
+    margin-top: 10px;
+}
+
