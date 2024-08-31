@@ -56,6 +56,13 @@ function closeUpdateScheda()
 }
 
 
+function toggleUpdateUsernameAndPasssword()
+{
+    var modal = document.querySelector("#update-user-pass-modal");
+    modal.hidden = !modal.hidden;
+}
+
+
 
 
 
