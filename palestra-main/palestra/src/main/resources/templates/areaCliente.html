@@ -34,9 +34,50 @@
 </head>
 <body>
     <h2>Benvenuto <span th:text="|${persona.nome} ${persona.cognome}|"></span> nell'area cliente</h2>
-    <h3>Il tuo piano abbonamento e': <span th:text="${persona.pianoAbbonamento}"></span></h3>
+    <h3>Il tuo piano abbonamento e': <span th:text="${persona.pianoAbbonamento.nome}"></span></h3>
     <button onclick="toggleUpdateUsernameAndPasssword()">Cambia password</button>
     <a href="/logout"><button class="btn-logout">Logout</button></a>
+    
+    <div class="scheda-container" >
+        <table>
+            <tr>
+                <td class="serie-header"> <strong>Serie 1</strong></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese1}"></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese2}"></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese3}"></td>
+            </tr>
+            <tr>
+                <td class="serie-header"> <strong>Serie 2</h1></strong>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese4}"></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese5}"></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese6}"></td>
+            </tr>
+            <tr>
+                <td class="serie-header"> <strong>Serie 3</strong></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese7}"></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese8}"></td>
+            </tr>
+            <tr th:each="esercizio : ${persona.scheda}">
+                <td th:text="${esercizio.ese9}"></td>
+            </tr>
+        </table>
+    </div>
 
     <div id="update-user-pass-modal" class="modal-form" hidden>
         <button onclick="toggleUpdateUsernameAndPasssword()">CHIUDI</button>
