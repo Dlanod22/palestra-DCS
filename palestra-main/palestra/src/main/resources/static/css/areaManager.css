@@ -317,3 +317,11 @@ body {
 .tbl-clienti th.cliente-id {
     border: 1px solid #ff9900; /* Bordo arancione per le celle */
 }
+
+nav img {
+    height: 75px;
+    width: 90px;
+    position: absolute;
+    left: 20px;
+    margin-left: 20px;
+}

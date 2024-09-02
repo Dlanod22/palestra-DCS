@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Irongrip - Recensioni </title>
+    <link rel="stylesheet">
+
+    <style>
+        /* Stile per il corpo della pagina */
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #fff; /* Colore di sfondo della pagina */
+            margin: 0;
+            padding: 0;
+        }
+        
+
+        /* Stile per il video */
+        .video-background {
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        /* Stile per il menu */
+        nav {
+            position: fixed;
+            bottom: 0; /* Sposta il menu in basso */
+            width: 100%; /* Allunga il menu per coprire tutta la larghezza della pagina */
+            background-color: rgba(255, 120, 40, 0.9); /* Colore di sfondo con trasparenza al 40% */
+            overflow: hidden; /* Per evitare che i contenuti escano dal contenitore */
+            padding: 10px 0;
+            display: flex;
+            justify-content: center; /* Allinea il menu al centro */
+            margin-bottom: 0; /* Rimuove lo spazio sotto il menu */
+        }
+
+        /* Stile per i link del menu */
+        nav a {
+            display: block;
+            color: #fff; /* Colore del testo */
+            text-align: center; /* Allinea il testo al centro del link */
+            padding: 14px 20px; /* Spaziatura interna */
+            text-decoration: none; /* Rimuove la sottolineatura */
+            font-size: 18px; /* Dimensione del testo */
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: background-color 0.3s, color 0.3s; /* Aggiunge una transizione fluida */
+            border-radius: 8px;
+        }
+
+        /* Stile per i link al passaggio del mouse */
+        nav a:hover {
+            background-color: #ffffff; /* Colore di sfondo al passaggio del mouse */
+            color: #ff7828; /* Colore del testo al passaggio del mouse */
+        }
+
+        nav img {
+            height: 75px;
+            width: 90px;
+            position: absolute;
+            left: 20px;
+            margin-left: 20px;
+        }
+
+        /* Stile per i bottoni */
+        button, input[type="submit"] {
+            padding: 10px;
+            background-color: #ff7828;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            transition: background-color 0.3s; /* Aggiunge una transizione fluida */
+        }
+
+        /* Stile per i bottoni al passaggio del mouse */
+        button:hover, input[type="submit"]:hover {
+            background-color: #ff5722;
+        }
+
+        .home {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #080300;
+            text-align: center;
+            font-size: 33px;
+        }
+
+        #message-modal button:hover {
+            background-color: #e64a19;
+        }
+
+    </style>
+</head>
+<body>
+    <video class="video-background" autoplay muted loop>
+        <source src="multimediale/Gym.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
+    <nav>
+        
+        <a href="/index">Home</a>
+        <a href="/chisiamo">Chi Siamo</a>
+        <a href="/recensioni">Recensioni</a>
+        <a href="/abbonamenti">Abbonamenti</a>
+        <a href="/corsi">Corsi</a>
+        <a href="/loginpage">Accedi</a>
+        <img src="multimediale/logopng.png" alt="Logo Menu">
+        <div class="menu-links">
+    </nav>
+
+    <div id="recensioni" class="recensioni">
+        <!-- Contenuto della home page -->
+    </div>
+</body>
+</html>

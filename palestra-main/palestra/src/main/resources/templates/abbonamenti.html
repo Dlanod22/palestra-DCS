@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irongrip - Abbonamenti</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #ff7828;
+            overflow: hidden;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav img {
+            height: 75px;
+            width: 90px;
+            position: absolute;
+            left: 20px;
+            margin-left: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background-color: #ffffff;
+            color: #ff7828;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .pricing {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .plan {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: calc(50% - 20px);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .plan:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan h3 {
+            color: #ff7828;
+            margin: 0 0 10px;
+            font-size: 24px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .plan p {
+            font-size: 18px;
+            margin: 10px 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .plan ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .plan ul li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .plan ul li:last-child {
+            border-bottom: none;
+        }
+
+        .plan .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ff7828;
+            margin: 20px 0;
+        }
+
+        .plan .button {
+            padding: 10px 20px;
+            background-color: #ff7828;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .plan .button:hover {
+            background-color: #ff5722;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: #ff7828;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="multimediale/logopng.png" alt="Logo Menu">
+        <div class="menu-links">
+            <a href="/index">Home</a>
+            <a href="/chisiamo">Chi Siamo</a>
+            <a href="/recensioni">Recensioni</a>
+            <a href="/abbonamenti">Abbonamenti</a>
+            <a href="/corsi">Corsi</a>
+            <a href="/loginpage">Accedi</a>
+        </div>
+    </nav>
+
+    <div class="container">
+       
+        <div class="pricing">
+            <div class="plan">
+                <h3>Abbonamento Basic</h3>
+                <p class="price">€30/mese</p>
+                <ul>
+                    <li>Accesso alla sala attrezzi</li>
+                    <li>Corso Pilates</li>
+                    <li>Corso Zumba</li>
+                </ul>
+                <p>Perfetto per chi cerca un'opzione economica per allenarsi con attrezzature di qualità.</p>
+                <button class="button" onclick="window.location.href='/registerpage'">Iscriviti</button>
+            </div>
+
+            <div class="plan">
+                <h3>Abbonamento Plus </h3>
+                <p class="price">€40/mese</p>
+                <ul>
+                    <li>Abbonamento Basic incluso</li>
+                    <li>Corso CrossFit</li>
+                    <li>Corso Spinnig</li>
+                    <li>Corso Nuoto</li>
+                </ul>
+                <p>Ideale per chi vuole definirsi, mettere massa , con corsi avanzati ad un ottimo prezzo.</p>
+                <button class="button" onclick="window.location.href='/registerpage'">Iscriviti</button>
+           </div>
+
+            <div class="plan">
+                <h3>Abbonamento Premium</h3>
+                <p class="price">€50/mese</p>
+                <ul>
+                    <li>Abbonamento Plus incluso</li>
+                    <li>Corso Boxe</li>
+                    <li>Corso Ginnastica Artistica</li>
+                    <li>Corso Judo</li>
+                    <li>Corso Karate</li>
+                </ul>
+                <p>Ideale per chi desidera massimizzare il proprio allenamento con accesso completo a tutte le nostre attività.</p>
+                <button class="button" onclick="window.location.href='/registerpage'">Iscriviti</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>IronGrip &copy; 2024</p>
+        <p>Tutti i diritti riservati</p>
+        <p>Numero telefonico: 342-456-7890</p>
+        <p> Via Italia 70200 </p>
+    </footer>
+</body>
+</html>
