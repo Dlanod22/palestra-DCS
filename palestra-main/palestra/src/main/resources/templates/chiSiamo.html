@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronGrip - Chi Siamo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background: linear-gradient(135deg, #ffffff, #f3f3f3);
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #ff7828;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav img {
+            height: 75px;
+            width: 90px;
+            position: absolute;
+            left: 20px;
+        }
+
+        nav .menu-links a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav .menu-links a:hover {
+            background-color: #ffffff;
+            color: #ff7828;
+        }
+
+        button, input[type="submit"] {
+            padding: 10px;
+            background-color: #ff7828;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #ff5722;
+        }
+
+        .about-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        h2, h3 {
+            color: #ff7828;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff7828;
+            padding-bottom: 10px;
+        }
+
+        h4 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        h2, h3, p, h4, ul, .trainer-container {
+            animation: fadeIn 3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .trainer-container {
+            background-color: rgba(255, 119, 40, 0.9);
+            width: 100%;
+            max-width: 100%;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .trainer-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .trainer-container img {
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .trainer-container div {
+            flex: 1;
+        }
+
+        footer {
+            background: #ff7828;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="multimediale/logopng.png" alt="Logo Menu">
+        <div class="menu-links">
+            <a href="/index">Home</a>
+            <a href="/chisiamo">Chi Siamo</a>
+            <a href="/recensioni">Recensioni</a>
+            <a href="/abbonamenti">Abbonamenti</a>
+            <a href="/corsi">Corsi</a>
+            <a href="/loginpage">Accedi</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="chi-siamo">
+            <h2>Chi Siamo</h2>
+            <p><strong>IronGrip</strong> nasce a Brindisi nel 2020 con l'obiettivo di diventare un punto di riferimento per il benessere e la crescita personale nel nostro territorio. Affiliata alla Federazione Ginnastica d'Italia (FGI), la nostra palestra si distingue per un ambiente accogliente e motivante, dove ogni membro può sentirsi a casa.</p>
+            
+            <h3>La Nostra Missione</h3>
+            <p>Alla IronGrip, il nostro obiettivo è quello di ispirare e supportare le persone nel raggiungimento del loro massimo potenziale, sia fisico che mentale. Ogni giorno ci impegniamo a creare un ambiente positivo e inclusivo, dove ogni individuo, indipendentemente dal livello di preparazione, possa sentirsi valorizzato e sostenuto.</p>
+            
+            <h3>Cosa Offriamo</h3>
+            <p>
+                <strong>Corsi per tutte le età e livelli:</strong> Dai corsi di ginnastica per bambini alle sessioni avanzate per atleti esperti.<br>
+                <strong>Attrezzature all'avanguardia:</strong> La nostra palestra è dotata di attrezzature moderne e sicure per garantire un allenamento efficace e sicuro.<br>
+                <strong>Percorsi personalizzati:</strong> Offriamo programmi di allenamento su misura per soddisfare le esigenze individuali dei nostri iscritti.<br>
+                <strong>Eventi e competizioni:</strong> Organizziamo regolarmente eventi, gare e competizioni per motivare e coinvolgere i nostri membri.<br>
+                <strong>Ambiente familiare e stimolante:</strong> Promuoviamo uno spazio dove il benessere fisico si unisce a quello mentale, in un contesto sereno e di amicizia.<br>
+            </p>
+            
+            <h3>Il Nostro Team</h3>
+
+            <div class="trainer-container">
+                <img src="multimediale/Martinaina.jpg" alt="Martina De Luca" height="300" width="200">
+                <div>
+                    <h4>Martina De Luca</h4>
+                    <p>Martina De Luca è un'insegnante di palestra altamente qualificata e appassionata, con una laurea in Scienze Motorie e una specializzazione in Body Building. Con anni di esperienza nel settore del fitness, Martina è un punto di riferimento presso la palestra IronGrip, dove guida i suoi clienti verso il raggiungimento dei loro obiettivi di forma fisica.</p>
+                    <p>Martina è nota per il suo approccio personalizzato e motivante, creando programmi di allenamento su misura che sono efficaci, sicuri e adatti a tutti i livelli di esperienza. La sua competenza spazia in diverse discipline, inclusi corsi di Boxe, Judo e Karate, dove trasmette non solo la tecnica, ma anche la passione e la disciplina necessarie per eccellere.</p>
+                    <p>Grazie al nostro sito, i clienti possono accedere comodamente alla loro area riservata, dove Martina aggiorna regolarmente le schede di allenamento, adattandole ai progressi e alle esigenze individuali. Questo servizio permette ai clienti di avere sempre a portata di mano un piano di allenamento strutturato e dettagliato, disponibile in ogni momento.</p>
+                    <p>La missione di Martina è trasformare la palestra in un ambiente stimolante e accogliente, dove ogni persona può scoprire e realizzare il proprio potenziale.</p>
+                </div>
+            </div>
+
+            <div class="trainer-container">
+                <img src="multimediale/federico.jpg" alt="Federico Fontana" height="300" width="200">
+                <div>
+                    <h4>Federico Fontana</h4>
+                    <p>Federico Fontana è un istruttore di fitness dinamico e versatile, con un'ampia esperienza in diverse discipline sportive. Federico è una figura chiave presso la palestra IronGrip, dove condivide la sua passione per il movimento e il benessere con tutti i suoi clienti.</p>
+                    <p>Federico è specializzato in una varietà di attività, tra cui Zumba, Spinning, Nuoto e Ginnastica Artistica. Grazie alla sua capacità di adattare ogni lezione alle esigenze e ai livelli di esperienza dei partecipanti, le sue classi sono sempre coinvolgenti, divertenti e adatte a tutti. Che tu stia cercando di migliorare la tua resistenza con lo Spinning, affinare le tue abilità nel Nuoto, o divertirti con l'energia esplosiva della Zumba, Federico ha il programma giusto per te.</p>
+                    <p>La sua filosofia è semplice: l'allenamento deve essere una combinazione di impegno e divertimento. Federico crede che ogni persona abbia il potenziale per raggiungere i propri obiettivi di fitness, e lavora instancabilmente per creare un ambiente motivante e positivo in cui questo possa accadere.</p>
+                    <p>Federico non solo trasmette le tecniche, ma anche l'entusiasmo e la dedizione necessari per raggiungere risultati concreti. Il suo approccio inclusivo e personalizzato assicura che ogni cliente si senta supportato e ispirato durante il proprio percorso di allenamento.</p>
+                    <p>Unisciti a Federico nella palestra IronGrip e scopri come il fitness può diventare una parte divertente e gratificante della tua vita quotidiana.</p>
+                </div>
+            </div>
+
+            <div class="trainer-container">
+                <img src="multimediale/giuglia.png.jpg" alt="Giulia Conti" height="300" width="200">
+                <div>
+                    <h4>Giulia Conti</h4>
+                    <p>Giulia Conti è un'istruttrice qualificata presso la palestra IronGrip, specializzata in Pilates e CrossFit. Con un approccio che unisce la precisione del Pilates all'intensità del CrossFit, Giulia crea programmi di allenamento che migliorano forza, flessibilità e resistenza.</p>
+                    <p>Nota per la sua attenzione ai dettagli e la capacità di personalizzare gli allenamenti, Giulia guida i suoi clienti verso i loro obiettivi, assicurandosi che ogni esercizio sia svolto in modo sicuro ed efficace. Che tu sia un principiante o un atleta esperto, con Giulia potrai migliorare la tua forma fisica e scoprire nuove potenzialità.</p>
+                </div>
+            </div>
+
+            <h3>Perché Scegliere IronGrip?</h3>
+            <p>Scegliere IronGrip significa entrare a far parte di una comunità impegnata nel promuovere il benessere e la crescita personale. 
+                Che il tuo obiettivo sia migliorare la forma fisica, rilassarti o superare nuove sfide, troverai il supporto e le risorse giuste per raggiungerlo al meglio.
+                Grazie alla nostra area riservata, accessibile sia dai docenti che dai clienti, avrai sempre a disposizione il tuo piano di allenamento personalizzato, creato appositamente per te in fase di iscrizione. 
+                Potrai consultarlo in qualsiasi momento, e il tuo istruttore potrà aggiornarlo e adattarlo continuamente ai tuoi progressi, assicurandosi che tu rimanga sempre sulla strada giusta verso i tuoi obiettivi.
+                Cosa aspetti? Visita subito la sezione Abbonamenti e scegli tra le opzioni Basic, Premium e Plus quella più adatta alle tue esigenze!</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>IronGrip &copy; 2024 - Tutti i diritti riservati</p>
+        <p>Numero telefonico: 342-456-7890 - Ci troviamo a Brindisi in Via Italia</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/reel/C_a-jExtBJp/?igsh=MXUzMXZtbnJ5c3FzNQ==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+</body>
+</html>

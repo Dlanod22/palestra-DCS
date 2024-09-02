@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funny Gym :) - Login</title>
+    <title>IronGrip - Login</title>
     <style>
         h1 {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -39,6 +39,15 @@
             font-size: 18px; /* Dimensione del testo */
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             transition: background-color 0.3s, color 0.3s; /* Aggiunge una transizione fluida */
+            border-radius: 8px;
+        }
+
+        nav img {
+            height: 75px;
+            width: 90px;
+            position: absolute;
+            left: 20px;
+            margin-left: 20px;
         }
 
         .video-background {
@@ -128,30 +137,51 @@
             background-color: #ff5722;
             transform: scale(1.05);
         }
+
+        .button {
+            display: inline-block;
+            background-color: #ff7828; /* Colore arancione */
+            color: white; /* Colore del testo */
+            padding: 10px 20px; /* Spaziatura interna */
+            text-decoration: none; /* Rimuove la sottolineatura */
+            border-radius: 25px; /* Angoli arrotondati */
+            font-size: 16pt; /* Dimensione del testo */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center; /* Centra il testo */
+        }
+
+        .button:hover {
+            background-color: #ff5722; /* Colore arancione più scuro al passaggio del mouse */
+            transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+        }
+
+     
     </style>
 </head>
 
 <body>
     <video class="video-background" autoplay muted loop>
-        <source src="multimediale/5886425139284810463.mp4" type="video/mp4">
+        <source src="multimediale/InShot_20240902_122717941.mp4" type="video/mp4">
         Il tuo browser non supporta il tag video.
     </video>
 
+   
     <nav>
+        <img src="multimediale/logopng.png" alt="Logo Menu">
         <div class="menu-links">
-            <a href="home.html">Home</a>
-            <a href="chi-siamo.html">Chi Siamo</a>
-            <a href="recensioni.html">Recensioni</a>
-            <a href="abbonamenti.html">Abbonamenti</a>
-            <a href="corsi.html">Corsi</a>
-            <a href="login.html">Accedi</a>
+            <a href="/index">Home</a>
+            <a href="/chisiamo">Chi Siamo</a>
+            <a href="/recensioni">Recensioni</a>
+            <a href="/abbonamenti">Abbonamenti</a>
+            <a href="/corsi">Corsi</a>
+            <a href="/loginpage">Accedi</a>
         </div>
     </nav>
 
     <div class="main-container">
         <div class="form-container">
-            <h1>Accedi</h1>
-            <form action="/login" method="post">
+        
+            <form id="login-form" action="/login" method="post">
                 <table>
                     <tr>
                         <td><label for="username">Username:</label></td>
@@ -170,6 +200,11 @@
                     </tr>
                 </table>
             </form>
+            <div class="main-div">
+                <h4>
+                    <a href="/registerpage" class="button">Registrati</a>
+                </h4>
+            </div>
         </div>
     </div>
 </body>

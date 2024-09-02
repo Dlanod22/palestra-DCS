@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport e Attività</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #ff7828;
+            overflow: hidden;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav img {
+            height: 75px;
+            width: 90px;
+            position: absolute;
+            left: 20px;
+            margin-left: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background-color: #ffffff;
+            color: #ff7828;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .sport {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .sport:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sport img {
+            width: 180px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .sport h2 {
+            color: #ff7828;
+            margin: 0 0 10px;
+            font-size: 24px;
+        }
+
+        .sport p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            background: #ff7828;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        h5 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            color:  #ff7828;
+            margin-bottom: 10px;
+            }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="multimediale/logopng.png" alt="Logo Menu">
+        <div class="menu-links">
+            <a href="/index">Home</a>
+            <a href="/chisiamo">Chi Siamo</a>
+            <a href="/recensioni">Recensioni</a>
+            <a href="/abbonamenti">Abbonamenti</a>
+            <a href="/corsi">Corsi</a>
+            <a href="/loginpage">Accedi</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="sport">
+            <div class="sport">
+                <img src="multimediale/pilates.jpg" alt="pilates">
+                <div>
+                    <h2>Pilates</h2>
+                    <p>
+                        Il Pilates è un metodo di allenamento che si concentra sulla postura, la respirazione e il controllo del corpo. Nato all'inizio del XX secolo grazie a Joseph Pilates, questo metodo combina movimenti lenti e controllati con una forte attenzione al rinforzo del core, cioè l'insieme di muscoli che sostengono il tronco.
+
+                        Adatto a persone di tutte le età e livelli di forma fisica, il Pilates è ideale per migliorare la flessibilità, l'equilibrio e la forza muscolare, in particolare dei muscoli profondi dell'addome e della schiena. Le lezioni possono essere svolte a corpo libero o con l'ausilio di attrezzi specifici, come il reformer o la palla Pilates, che rendono l'allenamento vario e stimolante.
+                
+                        I benefici del Pilates includono un miglioramento della postura, una maggiore consapevolezza del proprio corpo, riduzione dello stress e una migliore coordinazione. È particolarmente utile per chi desidera prevenire o alleviare problemi alla schiena, tonificare il corpo in modo armonico e sviluppare una maggiore connessione tra mente e corpo.
+                    </p>
+                    <h5>Lezioni</h5>
+                       <strong>  Lunedì 9:00  Giovedì 9:00 
+                       <br>   Martedì 19:30  Venerdì 19:30 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/crossfit.jpg" alt="crossfit">
+                <div>
+                    <h2>CrossFit</h2>
+                    <p>Il CrossFit è un programma di allenamento ad alta intensità che combina esercizi di diverse discipline, tra cui sollevamento pesi, ginnastica, cardio e movimenti funzionali. Ideato per migliorare la forma fisica a 360 gradi, il CrossFit punta su forza, resistenza, velocità, flessibilità e coordinazione.
+
+                        Le lezioni di CrossFit, spesso chiamate WOD (Workout of the Day), variano quotidianamente e sono pensate per sfidare costantemente i partecipanti, evitando la monotonia degli allenamenti tradizionali. Ogni WOD può essere scalato in base al livello di fitness individuale, rendendo il CrossFit accessibile sia ai principianti che agli atleti più esperti.
+                        
+                        Uno degli aspetti unici del CrossFit è il senso di comunità che si crea tra i partecipanti. Gli allenamenti di gruppo sono pensati per motivare e incoraggiare, creando un ambiente di supporto e sfida continua. I benefici del CrossFit includono un miglioramento significativo della forza muscolare, della resistenza cardiovascolare e della composizione corporea, oltre a una maggiore fiducia in sé stessi e determinazione.
+                        
+                        Se stai cercando un programma che ti spinga a superare i tuoi limiti, a raggiungere nuovi obiettivi e a far parte di una comunità attiva e coinvolgente, il CrossFit è la scelta ideale.</p>
+                        <h5>Lezioni</h5>
+                        <strong>  Lunedì 11:00  Giovedì 11:00 
+                        <br>   Martedì 18:00  Venerdì 18:00 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/Immagine_2024-09-01_113608.jpg" alt="zumba">
+                <div>
+                    <h2>Zumba</h2>
+                    <p>La Zumba è un'esplosiva combinazione di fitness e danza che trasforma l'allenamento in una festa divertente e coinvolgente. Ideata negli anni '90 dal ballerino e coreografo colombiano Beto Pérez, la Zumba mescola ritmi e movimenti tipici della danza latina, come salsa, merengue, reggaeton e cumbia, con esercizi aerobici per creare un'esperienza di allenamento unica.
+
+                        Ogni lezione di Zumba è un'esplosione di energia, caratterizzata da coreografie semplici e accessibili a tutti, indipendentemente dall'età o dal livello di forma fisica. L'obiettivo è divertirsi mentre si bruciano calorie, si tonifica il corpo e si migliora la coordinazione e la resistenza cardiovascolare.
+                        
+                        La Zumba non è solo un allenamento fisico, ma anche un modo per rilassarsi, ridurre lo stress e migliorare l'umore grazie al rilascio di endorfine che avviene durante la lezione. È l'attività perfetta per chi desidera mantenersi in forma senza rinunciare al divertimento.
+                        
+                        Se ami la musica, il movimento e vuoi allenarti in un ambiente vivace e positivo, la Zumba è l'attività che fa per te!</p>
+                        <h5>Lezioni</h5>
+                        <strong>  Lunedì 11:00  Giovedì 11:00 
+                        <br>   Martedì 21:00  Giovedì 21:00 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/Immagine_2024-09-01_113853.jpg" alt="spinning">
+                <div>
+                    <h2>Spinning</h2>
+                    <p>Lo Spinning è un allenamento cardiovascolare intenso che si svolge su una bicicletta stazionaria, guidato da un istruttore esperto e accompagnato da una musica motivante. Nato negli anni '90, questo tipo di allenamento è progettato per migliorare la resistenza, bruciare calorie e rafforzare i muscoli delle gambe, dei glutei e del core.
+
+                        Le lezioni di Spinning simulano diverse situazioni di pedalata, come salite, sprint e pedalate a ritmo costante, permettendo ai partecipanti di variare l'intensità e il ritmo dell'allenamento. Ogni sessione è personalizzabile: i partecipanti possono regolare la resistenza della bici e adattare la propria velocità, rendendo lo Spinning adatto sia ai principianti che agli atleti più esperti.
+                        
+                        Un grande vantaggio dello Spinning è la sua capacità di offrire un allenamento ad alto impatto sul sistema cardiovascolare con un basso impatto sulle articolazioni, rendendolo ideale per chi desidera migliorare la propria forma fisica in modo sicuro. Inoltre, l'energia del gruppo e la guida dell'istruttore rendono ogni lezione motivante e divertente, spingendoti a superare i tuoi limiti.
+                        
+                        Se sei alla ricerca di un'attività coinvolgente che ti aiuti a migliorare la tua resistenza, bruciare grassi e tonificare il corpo, lo Spinning è l'allenamento perfetto per te!</p>
+                        <h5>Lezioni</h5>
+                        <strong>  Lunedì 9:30  Giovedì 9:30 
+                        <br>   Mercoledì 19:00  Sabato 19:00 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/pexels-cottonbro-4761668.jpg" alt="boxe">
+                <div>
+                    <h2>Boxe</h2>
+                    <p>La Boxe è molto più di uno sport da combattimento: è un allenamento completo che combina forza, resistenza, coordinazione e disciplina mentale. Adatto a tutti, dai principianti agli atleti esperti, il corso di Boxe ti permette di migliorare la tua condizione fisica, affinare i tuoi riflessi e aumentare la fiducia in te stesso.
+
+                        Durante le lezioni di Boxe, imparerai le tecniche fondamentali come il jab, il diretto, il gancio e il montante, oltre a combinazioni di colpi e movimenti di difesa. L'allenamento include anche esercizi cardiovascolari, sessioni di potenziamento muscolare e lavoro su sacchi, guanti e colpitori, per offrirti un'esperienza completa e coinvolgente.
+                        
+                        Oltre ai benefici fisici, la Boxe è un ottimo modo per ridurre lo stress, migliorare la concentrazione e sviluppare una forte disciplina mentale. Allenarsi con costanza ti permetterà di vedere progressi rapidi, sia in termini di forma fisica che di abilità tecniche.
+                        
+                        Se sei alla ricerca di un'attività che ti sfidi, ti tonifichi e ti insegni a superare i tuoi limiti, la Boxe è la scelta ideale. Unisciti a noi e scopri come questo sport può trasformare il tuo corpo e la tua mente.</p>
+                        <h5>Lezioni</h5>
+                        <strong>  Lunedì 11:30  Giovedì 11:30 
+                        <br>   Mercoledì 20:00  Venerdì 20:00 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/nuoto.jpg" alt="nuoto">
+                <div>
+                    <h2>Nuoto</h2>
+                    <p>Il Nuoto è uno degli sport più completi e benefici per il corpo, ideale per persone di tutte le età e livelli di forma fisica. Che tu sia un principiante che vuole imparare le basi o un nuotatore esperto che desidera perfezionare la tecnica, il nostro corso di Nuoto offre un ambiente sicuro e stimolante per raggiungere i tuoi obiettivi.
+
+                        Le lezioni di Nuoto migliorano la resistenza cardiovascolare, tonificano i muscoli di tutto il corpo e aiutano a migliorare la flessibilità e la coordinazione. Poiché si svolge in acqua, il Nuoto è un'attività a basso impatto sulle articolazioni, rendendolo perfetto per chi cerca un allenamento efficace e sicuro, particolarmente indicato per chi ha problemi articolari o per la riabilitazione fisica.
+                        
+                        Oltre ai benefici fisici, il Nuoto è un ottimo modo per ridurre lo stress, migliorare il tono dell'umore e favorire il benessere mentale. Le nostre lezioni sono condotte da istruttori qualificati, pronti a guidarti passo dopo passo, sia che tu voglia imparare a nuotare, migliorare la tua tecnica o semplicemente goderti un allenamento rigenerante.
+                        
+                        Se desideri un'attività che unisca fitness, divertimento e benessere, il Nuoto è la scelta perfetta per te. Vieni a tuffarti con noi e scopri tutti i benefici di questo sport straordinario!</p>
+                        <h5>Lezioni</h5>
+                        <strong>  Martedì 9:30  Sabato 9:30 
+                        <br>   Lunedi 15:00  Giovedì 15:00 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/artistica.jpg" alt="ginnastica artistica">
+                <div>
+                    <h2>Ginnastica Artistica</h2>
+                    <p> La Ginnastica Artistica è una disciplina affascinante che combina forza, eleganza, flessibilità e coordinazione in una serie di movimenti spettacolari. Questo sport, adatto a bambini, giovani e adulti, permette di sviluppare un controllo del corpo straordinario e una consapevolezza fisica unica, grazie a esercizi su attrezzi come la trave, il corpo libero, il volteggio e le parallele.
+
+                        Durante le lezioni di Ginnastica Artistica, gli allievi imparano a eseguire una vasta gamma di elementi tecnici, dalle capriole e salti acrobatici ai movimenti più complessi come verticali e torsioni. Oltre a migliorare la forza muscolare e la flessibilità, questo sport aiuta a sviluppare l'equilibrio, la coordinazione e la disciplina mentale.
+                        
+                        La Ginnastica Artistica è ideale per chi desidera un allenamento completo che sfida il corpo e la mente, promuovendo al contempo lo spirito di squadra e la perseveranza. I nostri istruttori qualificati forniscono un ambiente sicuro e incoraggiante, dove ogni allievo può crescere e migliorare al proprio ritmo, indipendentemente dal livello di partenza.
+                        
+                        Se cerchi un'attività che unisca bellezza, potenza e controllo, la Ginnastica Artistica è la scelta perfetta. Vieni a scoprire con noi l'emozione di questo sport e lasciati sorprendere dalle tue capacità!</p>
+                        <h5>Lezioni</h5>
+                        <strong>  Lunedì 16:30  Giovedì 16:30 
+                        <br>   Martedì 18:10  Sabato 18:10 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/judo.jpg" alt="judo">
+                <div>
+                    <h2>Judo</h2>
+                    <p>Il Judo è un'arte marziale giapponese che unisce tecnica, forza e disciplina mentale in un'unica pratica, promuovendo il rispetto, l'autocontrollo e la perseveranza. Creato dal maestro Jigoro Kano nel 1882, il Judo significa letteralmente "via della cedevolezza" e si basa sul principio di utilizzare la forza dell'avversario a proprio vantaggio, piuttosto che opporvisi direttamente.
+
+                        Durante le lezioni di Judo, gli allievi imparano una vasta gamma di tecniche, che includono proiezioni, leve articolari e immobilizzazioni al suolo. Questo sport è adatto a tutte le età e livelli di abilità, dai principianti ai judoka avanzati, e offre un allenamento completo che migliora la forza fisica, l'agilità e la resistenza.
+                        
+                        Oltre agli aspetti fisici, il Judo insegna importanti valori come il rispetto per gli altri, la disciplina personale e il coraggio, elementi fondamentali che si riflettono nella vita quotidiana. Le lezioni sono condotte da istruttori esperti che garantiscono un ambiente sicuro e rispettoso, dove ogni partecipante può sviluppare le proprie abilità al proprio ritmo.
+                        
+                        Se desideri un'attività che ti sfidi fisicamente e mentalmente, il Judo è la scelta ideale. Vieni a scoprire la bellezza e la profondità di questa antica arte marziale e unisciti a noi nel percorso verso la maestria e la crescita personale.
+                        </p>
+                        <h5>Lezioni</h5>
+                        <strong>  Martedì 9:30  Sabato 9:30 
+                        <br>   Martedì 19:00  Sabato 19:00 </br> </strong>
+                </div>
+            </div>
+
+            <div class="sport">
+                <img src="multimediale/karate.jpg" alt="karate">
+                <div>
+                    <h2>Karate</h2>
+                    <p>     Il Karate è un'arte marziale giapponese che combina tecniche di difesa personale con uno sviluppo completo del corpo e della mente. Significa "mano vuota" e si basa sull'uso di colpi di pugno, calci, parate e movimenti rapidi per neutralizzare l'avversario. Adatto a tutte le età e livelli di abilità, il Karate è un'ottima disciplina per migliorare la forza, la coordinazione, la flessibilità e la concentrazione.
+
+                        Durante le lezioni di Karate, gli allievi imparano le tecniche fondamentali, conosciute come "kihon", e le applicano in kata (forme) e kumite (combattimento). Oltre agli aspetti tecnici, il Karate promuove valori fondamentali come il rispetto, la disciplina, il controllo di sé e la perseveranza, rendendolo non solo uno sport, ma un vero e proprio stile di vita.
+    
+                        Il nostro corso è guidato da istruttori qualificati che offrono un ambiente sicuro e strutturato, dove ogni partecipante può crescere al proprio ritmo. Che tu sia un principiante che vuole avvicinarsi alle arti marziali o un praticante esperto che cerca di affinare le proprie abilità, il Karate offre un percorso di crescita personale e fisica.
+    
+                         Se cerchi una disciplina che ti sfidi a livello fisico e mentale, aiutandoti a migliorare il tuo equilibrio interiore e a difenderti con efficacia, il Karate è la scelta perfetta. Unisciti a noi e scopri la potenza e la grazia di questa antica arte marziale.</p>
+                         <h5>Lezioni</h5>
+                         <strong>  Lunedì 16:30  Giovedì 16:30 
+                            <br>   Lunedì 18:00  Giovedì 18:00 || Sabato 19:00 </br> </strong>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Tutti i diritti riservati. | <a href="/privacy">Privacy</a> | <a href="/terminiecondizioni">Termini e Condizioni</a></p>
+    </footer>
+</body>
+</html>

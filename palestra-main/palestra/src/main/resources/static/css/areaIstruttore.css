@@ -111,3 +111,11 @@ h3 {
 .tbl button svg {
     fill: white; /* Colore dell'icona */
 }
+
+nav img {
+    height: 75px;
+    width: 90px;
+    position: absolute;
+    left: 20px;
+    margin-left: 20px;
+}
