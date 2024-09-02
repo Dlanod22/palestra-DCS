@@ -28,12 +28,16 @@
     </script>
 </head>
 <body>
-    <h2><span th:text="${corso.nome}"></span></h2>
+
+    <nav class="navbar">
+        <div>
+            <img src="multimediale/logopng.png" alt="Logo Menu">
+            <div class="menu-links"> </div>
+            <h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clienti che possono accedere al <span th:text="${corso.nome}"></span></h2>
+        </div>
+    </nav>
     
-    <video class="video-background" autoplay muted loop>
-        <source src="multimediale/5320011-uhd_2160_3840_25fps.mp4" type="video/mp4">
-        Il tuo browser non supporta il tag video.
-    </video>
+    
     <div id="clienti-block">
         <h3>Clienti che possono accedere al corso:</h3>
         <table class="tbl">
