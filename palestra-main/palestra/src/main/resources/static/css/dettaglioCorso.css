@@ -8,6 +8,29 @@ body {
     color: #333;
 }
 
+.navbar {
+    background: linear-gradient(90deg, #ff6f00, #ffb74d); /* Sfuma dall'arancio scuro all'arancio chiaro */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Dispone gli elementi uno sotto l'altro */
+    align-items: flex-start; /* Allinea gli elementi a sinistra */
+}
+
+.navbar div {
+    margin-bottom: 10px; /* Aggiungi uno spazio tra gli elementi */
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: 24pt;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
 
 /* Stile per l'intestazione delle serie nella scheda */
 .serie-header {
@@ -31,7 +54,7 @@ body {
 
 /* Stile per le intestazioni principali sopra la tabella */
 h2, h3 {
-    color: #ff6f00; /* Arancione */
+    color: #fdfdfd; /* Arancione */
     margin: 20px 0; /* Spazio sopra e sotto le intestazioni */
     text-align: center; /* Centra il testo */
 }
