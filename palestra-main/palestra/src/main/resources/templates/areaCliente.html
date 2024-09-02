@@ -17,15 +17,15 @@
         }
 
         function toggleConsigliata(button) {
-            var schedaContainer = button.nextElementSibling;
-            if (schedaContainer.style.display === "none") {
-                schedaContainer.style.display = "block";
-                button.textContent = "Nascondi scheda Consigliata";
-            } else {
-                schedaContainer.style.display = "none";
-                button.textContent = "Mostra scheda Consigliata";
-            }
-        }
+    var schedaContainer = button.closest('a').nextElementSibling;
+    if (schedaContainer.style.display === "none" || schedaContainer.style.display === "") {
+        schedaContainer.style.display = "block";
+        button.querySelector('input').value = "Nascondi scheda Consigliata";
+    } else {
+        schedaContainer.style.display = "none";
+        button.querySelector('input').value = "Scheda Consigliata";
+    }
+}
 
         function toggleUpdateUsernameAndPasssword() {
             var modal = document.getElementById('update-user-pass-modal');
@@ -71,10 +71,10 @@
             </table>
         </div>
 
-        <a th:href="|/consigliata/${persona.id}|"  style="display: inline;">
-            <input type="button" class="toggle-btn"  value="Mostra sheda consigliata">
+        <a th:href="|/consigliata/${persona.id}|" style="display: inline;" onclick="toggleConsigliata(this); return false;">
+            <input type="button" class="toggle-btn" value="Scheda consigliata">
         </a>
-        <div class="scheda-container" th:if="${scheda} != null">
+        <div class="scheda-container" th:if="${scheda} != null" style="display: none;">
             <table>
                 <thead>
                     <tr>
