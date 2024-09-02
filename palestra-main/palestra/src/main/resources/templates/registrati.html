@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irongrip - Registrazione</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            background-color: #ff7828;
+            overflow: hidden;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav img {
+            height: 60px;
+            width: 150px;
+            position: absolute;
+            left: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ffffff;
+            color: #ff7828;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .registration-form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .registration-form h1 {
+            color: #ff7828;
+            margin-bottom: 20px;
+        }
+
+        .registration-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+        }
+
+        .registration-form input,
+        .registration-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .registration-form button {
+            padding: 10px;
+            background-color: #ff7828;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .registration-form button:hover {
+            background-color: #ff5722;
+        }
+
+        footer {
+            background: #ff7828;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="logomenu.png" alt="Logo Menu">
+        <div class="menu-links">
+            <a href="home.html">Home</a>
+            <a href="chi-siamo.html">Chi Siamo</a>
+            <a href="recensioni.html">Recensioni</a>
+            <a href="abbonamenti.html">Abbonamenti</a>
+            <a href="corsi.html">Corsi</a>
+            <a href="login.html">Accedi</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="registration-form">
+            <h1>Registrati</h1>
+            <form action="/registrazione" method="post">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="cognome">Cognome</label>
+                <input type="text" id="cognome" name="cognome" required>
+
+                <label for="datanascita">Data di Nascita</label>
+                <input type="date" id="datanascita" name="datanascita" required>
+
+                <label for="eta">Età</label>
+                <input type="number" id="eta" name="eta" required>
+
+                <label for="peso">Peso (kg)</label>
+                <input type="number" step="0.1" id="peso" name="peso" required>
+
+                <label for="altezza">Altezza (cm)</label>
+                <input type="number" id="altezza" name="altezza" required>
+
+                <label for="sesso">Sesso</label>
+                <select id="sesso" name="sesso" required>
+                    <option value="M">Maschile</option>
+                    <option value="F">Femminile</option>
+                </select>
+
+                <label for="obiettivo">Piano Abbonamento</label>
+                <select id="obiettivo" name="obiettivo" required>
+                    <option value="Aumentare massa">Aumentare massa</option>
+                    <option value="Tonificare">Tonificare</option>
+                    <option value="Mantenere peso">Mantenere peso</option>
+                    <option value="Perdere peso">Perdere peso</option>
+                </select>
+
+               <label for="pianoabbonamento">Piano Abbonamento</label>
+                <select id="pianoabbonamento" name="pianoabbonamento" required>
+                    <option value="1">Basic - €30/mese</option>
+                    <option value="2">Plus - €40/mese</option>
+                    <option value="3">Premium - €50/mese</option>
+                </select>
+
+                <button type="submit">Registrati</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Funny Gym &copy; 2024</p>
+        <p>Tutti i diritti riservati</p>
+        <p>Numero telefonico: 342-456-7890</p>
+        <p>Ci troviamo a Brindisi in Via Italia</p>
+    </footer>
+</body>
+</html>

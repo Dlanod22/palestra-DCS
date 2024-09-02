@@ -1,113 +1,209 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
+    <meta charset="UTF-8">
     <title>Area Cliente</title>
-    <style>
-        body{
-            background-color: cadetblue;
+    <link th:href="@{/css/areaCliente.css}" rel="stylesheet" >
+    <script>
+        function toggleScheda(button) {
+            var schedaContainer = button.nextElementSibling;
+            if (schedaContainer.style.display === "none") {
+                schedaContainer.style.display = "block";
+                button.textContent = "Nascondi scheda";
+            } else {
+                schedaContainer.style.display = "none";
+                button.textContent = "Mostra scheda";
+            }
         }
 
-        .modal-form{
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: bisque;
-            padding: 15px;
-            border: 2px solid rgb(50, 50, 50);
-            border-radius: 5px;
-            z-index: 9999;
+        function toggleConsigliata(button) {
+            var schedaContainer = button.nextElementSibling;
+            if (schedaContainer.style.display === "none") {
+                schedaContainer.style.display = "block";
+                button.textContent = "Nascondi scheda Consigliata";
+            } else {
+                schedaContainer.style.display = "none";
+                button.textContent = "Mostra scheda Consigliata";
+            }
         }
 
-        #message-modal{
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgb(0, 130, 236);
-            padding: 15px;
-            border: 2px solid rgb(50, 50, 50);
-            border-radius: 5px;
-            z-index: 9999;
+        function toggleUpdateUsernameAndPasssword() {
+            var modal = document.getElementById('update-user-pass-modal');
+            if (modal.style.display === "none" || modal.style.display === "") {
+                modal.style.display = "block";
+            } else {
+                modal.style.display = "none";
+            }
         }
-    </style>
-    <script src="js/funzioni.js"></script>
+    </script>
 </head>
 <body>
-    <h2>Benvenuto <span th:text="|${persona.nome} ${persona.cognome}|"></span> nell'area cliente</h2>
-    <h3>Il tuo piano abbonamento e': <span th:text="${persona.pianoAbbonamento.nome}"></span></h3>
-    <button onclick="toggleUpdateUsernameAndPasssword()">Cambia password</button>
-    <a href="/logout"><button class="btn-logout">Logout</button></a>
-    
-    <div class="scheda-container" >
-        <table>
-            <tr>
-                <td class="serie-header"> <strong>Serie 1</strong></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese1}"></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese2}"></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese3}"></td>
-            </tr>
-            <tr>
-                <td class="serie-header"> <strong>Serie 2</h1></strong>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese4}"></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese5}"></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese6}"></td>
-            </tr>
-            <tr>
-                <td class="serie-header"> <strong>Serie 3</strong></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese7}"></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese8}"></td>
-            </tr>
-            <tr th:each="esercizio : ${persona.scheda}">
-                <td th:text="${esercizio.ese9}"></td>
-            </tr>
-        </table>
-    </div>
+    <div class="container">
+        <h2>Benvenuto <span th:text="|${persona.nome} ${persona.cognome}|"></span> nell'area cliente</h2>
+        <h3>Il tuo piano abbonamento è: <span th:text="${persona.pianoAbbonamento.nome}"></span></h3>
 
-    <div id="update-user-pass-modal" class="modal-form" hidden>
-        <button onclick="toggleUpdateUsernameAndPasssword()">CHIUDI</button>
-7        <form action="/cliente/updateUser" method="post">
-            <table>
-                <input type="hidden" name="id" id="idCliente" th:value="${persona.id}">
-                <tr>
-                    <td><label for="username">Username</label></td>
-                    <td><input type="text" name="username" id="username"></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Vecchia Password</label></td>
-                    <td><input type="text" name="old-password" id="old-password"></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Nuova Password</label></td>
-                    <td><input type="text" name="new-password" id="new-password"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><input style="width: 100%;" type="submit" value="Modifica"></td>
-                </tr>
+        <div class="scheda-container" >
+            <table class="tbl">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cognome</th>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Età</th>
+                        <th>Peso</th>
+                        <th>Altezza</th>
+                        <th>Obiettivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td th:text="${persona.nome}"></td>
+                        <td th:text="${persona.cognome}"></td>
+                        <td th:text="${persona.id}"></td>
+                        <td th:text="${persona.username}"></td>
+                        <td th:text="${persona.eta}"></td>
+                        <td th:text="${persona.peso}"></td>
+                        <td th:text="${persona.altezza}"></td>
+                        <td th:text="${persona.obiettivo}"></td>
+                    </tr>
+                </tbody>
             </table>
-        </form>
-    </div>
+        </div>
 
+        <a th:href="|/consigliata/${persona.id}|"  style="display: inline;">
+            <input type="button" class="toggle-btn"  value="Mostra sheda consigliata">
+        </a>
+        <div class="scheda-container" th:if="${scheda} != null">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scheda Consigliata</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 1</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese1}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese2}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese3}"></td>
+                    </tr>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 2</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese4}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese5}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese6}"></td>
+                    </tr>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 3</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese7}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese8}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese9}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <div id="message-modal" th:if="${message} != null">
-        <button onclick="document.querySelector('#message-modal').hidden=true">Chiudi</button>
-        <hr>
-        <p th:text="${message}"></p>
+        <button class="toggle-btn" onclick="toggleScheda(this)">Mostra Scheda</button>
+        <div class="scheda-container" style="display: none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scheda</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 1</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese1}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese2}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese3}"></td>
+                    </tr>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 2</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese4}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese5}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese6}"></td>
+                    </tr>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 3</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese7}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese8}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${persona.scheda}">
+                        <td th:text="${esercizio.ese9}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div> <button class="toggle-btn" onclick="toggleUpdateUsernameAndPasssword()">Cambia password</button></div>
+        <div id="update-user-pass-modal" class="modal-form" style="display: none;">
+            <form action="/cliente/updateUser" method="post">
+                <table>
+                    <input type="hidden" name="id" id="idCliente" th:value="${persona.id}">
+                    <tr>
+                        <td><label for="username">Username</label></td>
+                        <td><input type="text" name="username" id="username" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="old-password">Vecchia Password</label></td>
+                        <td><input type="password" name="old-password" id="old-password" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="new-password">Nuova Password</label></td>
+                        <td><input type="password" name="new-password" id="new-password" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input style="width: 100%;" type="submit" value="Modifica"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div id="message-modal" th:if="${message} != null">
+            <button onclick="document.querySelector('#message-modal').style.display='none'">Chiudi</button>
+            <hr>
+            <p th:text="${message}"></p>
+        </div>
+
+        <div class="logout-container">
+            <a href="/logout"><button class="logout-btn">Logout</button></a>
+        </div>
     </div>
 </body>
 </html>

@@ -12,4 +12,11 @@ public class AppController
     {
         return "index.html";
     }
+
+    @GetMapping("/registerpage")
+    public String registrazione()
+    {
+        return "registrati.html";
+    }
+
 }

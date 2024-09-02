@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -111,4 +112,27 @@ public class SchedaController {
         as.setMessage("Errore richiesta non autorizzata");
         return "redirect:/loginpage";
     }
+
+    @GetMapping("/consigliata/{clienteId}")
+    public String schedaConsigliata(@PathVariable Long clienteId, Model model) 
+    {
+        // Recupera il cliente dal database
+        Cliente cliente = clienteService.readById(clienteId);
+    
+        // Ottieni la scheda consigliata
+        Scheda consigliata = schedaService.getSchedaConsigliata(cliente);
+        System.out.println("\n" + consigliata );
+
+        if (consigliata == null) {
+            consigliata = new Scheda(); // Inizializza con un oggetto vuoto o con valori di default
+        }
+
+        // Aggiungi i dati al modello
+        model.addAttribute("persona", cliente);
+        model.addAttribute("scheda", consigliata);
+    
+        // Restituisce il nome della vista HTML
+        return "areaCliente.html";
+    }
+
 }

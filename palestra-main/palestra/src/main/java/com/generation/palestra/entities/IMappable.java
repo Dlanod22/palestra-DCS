@@ -89,6 +89,9 @@ public interface IMappable {
                             case "boolean":
                                 m.invoke(this, (valoreAssociato.equals("1")?true:false));
                             break;
+                            case "char":
+                                m.invoke(this, valoreAssociato.charAt(0)); //char(valoreAssociato));
+                            break;
                         }
                     } catch (Exception ex) {
                        ex.printStackTrace();

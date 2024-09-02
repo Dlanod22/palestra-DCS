@@ -57,4 +57,7 @@ public class ClienteService extends GenericService<Cliente, ClienteDao>
         return studenti.values().stream().map(e -> (Cliente)e).toList();
     }
 
+    
+
+
 }

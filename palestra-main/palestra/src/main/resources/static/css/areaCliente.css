@@ -1,0 +1,134 @@
+body {
+    background: linear-gradient(120deg, #f3f4f6, #e3e4e8);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Stile del titolo principale */
+h2 {
+    font-size: 24pt;
+    color: #3498db;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Contenitore principale centrato */
+.container {
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile della tabella */
+table {
+    width: 90%; /* Aumentato dal precedente 80% */
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 16pt;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center; /* Centrato */
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #3498db; /* Colore blu più scuro per le intestazioni */
+    color: white; /* Testo bianco */
+    font-weight: bold;
+}
+
+table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(even) {
+    background-color: #fff;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Stile del pulsante toggle */
+.toggle-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16pt;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 20px auto; /* Centrato */
+}
+
+.toggle-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.scheda-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.serie-header {
+    background-color: #68b5f5b9; /* Blu leggero */
+    color: hsl(0, 0%, 0%);
+    font-weight: bold;
+    text-align: center; /* Centrato */
+    font-size: 18pt;
+}
+
+.logout-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto; /* Per spingere il logout verso il basso */
+    padding-right: 20px;
+    position: absolute; /* Posizione assoluta rispetto al container */
+    bottom: 20px; /* Distanza dal fondo del container */
+    right: 20px; /* Distanza dal lato destro del container */
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16pt;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+a input[type="button"] {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}

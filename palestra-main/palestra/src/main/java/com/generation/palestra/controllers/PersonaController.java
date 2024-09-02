@@ -1,15 +1,19 @@
 package com.generation.palestra.controllers;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.generation.palestra.entities.Manager;
 import com.generation.palestra.entities.Istruttore;
 import com.generation.palestra.entities.Persona;
+import com.generation.palestra.entities.PianoAbbonamento;
 import com.generation.palestra.entities.Cliente;
 import com.generation.palestra.services.AppService;
 import com.generation.palestra.services.CorsoService;
@@ -55,6 +59,8 @@ public class PersonaController {
         session.invalidate();
         return "redirect:/loginpage";
     }
+
+
 
     @GetMapping("/area-istruttore")
     public String areaIstruttore(HttpSession session, Model model)
@@ -132,5 +138,17 @@ public class PersonaController {
         session.invalidate();
         return "redirect:/loginpage";
 
+    }
+
+    @PostMapping("/registrazione")
+    public String registrazione(@RequestParam Map<String, String> params )
+    {
+        Cliente c = context.getBean(Cliente.class, params);
+        PianoAbbonamento piano = pianoAbbonamentoService.readById(Long.parseLong(params.get("pianoabbonamento")));
+        c.setPianoAbbonamento(piano);
+        clienteService.create(c);
+    
+
+        return "redirect:/loginpage";
     }
 }
