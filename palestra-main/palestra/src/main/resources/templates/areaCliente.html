@@ -17,13 +17,13 @@
         }
 
         function toggleConsigliata(button) {
-    var schedaContainer = button.closest('a').nextElementSibling;
-    if (schedaContainer.style.display === "none" || schedaContainer.style.display === "") {
+    var schedaContainer = button.parentNode.nextElementSibling;
+    if (schedaContainer.style.display === "none") {
         schedaContainer.style.display = "block";
-        button.querySelector('input').value = "Nascondi scheda Consigliata";
+        button.value = "Nascondi scheda consigliata";
     } else {
         schedaContainer.style.display = "none";
-        button.querySelector('input').value = "Scheda Consigliata";
+        button.value = "Mostra scheda consigliata";
     }
 }
 
@@ -38,8 +38,13 @@
     </script>
 </head>
 <body>
+    <nav class="navbar">
+        <div>
+            <h2>Ciao <span th:text="|${persona.nome} ${persona.cognome}|"></span>, benvenuto nell'area cliente</h2>
+        </div>
+        
+    </nav>
     <div class="container">
-        <h2>Benvenuto <span th:text="|${persona.nome} ${persona.cognome}|"></span> nell'area cliente</h2>
         <h3>Il tuo piano abbonamento è: <span th:text="${persona.pianoAbbonamento.nome}"></span></h3>
 
         <div class="scheda-container" >
@@ -66,57 +71,6 @@
                         <td th:text="${persona.peso}"></td>
                         <td th:text="${persona.altezza}"></td>
                         <td th:text="${persona.obiettivo}"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <a th:href="|/consigliata/${persona.id}|" style="display: inline;" onclick="toggleConsigliata(this); return false;">
-            <input type="button" class="toggle-btn" value="Scheda consigliata">
-        </a>
-        <div class="scheda-container" th:if="${scheda} != null" style="display: none;">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Scheda Consigliata</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="serie-header"><strong>Serie 1</strong></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese1}"></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese2}"></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese3}"></td>
-                    </tr>
-                    <tr>
-                        <td class="serie-header"><strong>Serie 2</strong></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese4}"></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese5}"></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese6}"></td>
-                    </tr>
-                    <tr>
-                        <td class="serie-header"><strong>Serie 3</strong></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese7}"></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese8}"></td>
-                    </tr>
-                    <tr th:each="esercizio : ${scheda}">
-                        <td th:text="${esercizio.ese9}"></td>
                     </tr>
                 </tbody>
             </table>
@@ -171,6 +125,57 @@
             </table>
         </div>
 
+        <a th:href="|/consigliata/${persona.id}|" style="display: inline;">
+            <input type="button" class="toggle-btn" value="Mostra scheda consigliata">
+        </a>
+        <div class="scheda-container" th:if="${scheda} != null">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scheda Consigliata</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 1</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese1}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese2}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese3}"></td>
+                    </tr>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 2</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese4}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese5}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese6}"></td>
+                    </tr>
+                    <tr>
+                        <td class="serie-header"><strong>Serie 3</strong></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese7}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese8}"></td>
+                    </tr>
+                    <tr th:each="esercizio : ${scheda}">
+                        <td th:text="${esercizio.ese9}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <div> <button class="toggle-btn" onclick="toggleUpdateUsernameAndPasssword()">Cambia password</button></div>
         <div id="update-user-pass-modal" class="modal-form" style="display: none;">
             <form action="/cliente/updateUser" method="post">
@@ -207,3 +212,4 @@
     </div>
 </body>
 </html>
+
